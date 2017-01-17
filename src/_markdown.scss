@@ -1,0 +1,28 @@
+.md {
+  table {
+    background-color: #fff;
+    border-left: medium none;
+    margin: 10px 5px 25px;
+
+    th {
+      background: none repeat scroll 0 0 #ad0000;
+      border-style: none;
+      border-width: medium;
+      color: #111113;
+      font-size: 0.9em;
+      font-weight: bold;
+      padding: 0.5em;
+      text-align: center;
+    }
+
+    td {
+      border-style: none none solid;
+      border-width: medium medium 1px;
+      color: #111113;
+      font-size: 0.9em;
+      font-weight: bold;
+      padding: 0.2em;
+      vertical-align: middle;
+    }
+  }
+}
