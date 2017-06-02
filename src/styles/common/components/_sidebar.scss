@@ -1,0 +1,165 @@
+.side {
+  font-size: 1em;
+  margin: 0;
+
+  &::before {
+    background: url(%%sidebar%%) center no-repeat;
+    content: '';
+    display: block;
+    height: 300px;
+    width: 100%;
+  }
+
+  .titlebox,
+  .usertext,
+  .md-container,
+  .md {
+    font-size: inherit;
+  }
+
+  .md {
+    table:last-of-type {
+      @include clearfix;
+      background: $theme-color-sidebar-schedule-background;
+      box-shadow: 0 0 5px $theme-color-header-tabs-box-shadow;
+      color: $theme-color-sidebar-schedule-text;
+      display: flex;
+      left: 0;
+      line-height: 1.365;
+      margin: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 5em; /* 80/16 */
+      cursor: default;
+      width: 100%;
+
+      tbody,
+      tr,
+      th,
+      td {
+        line-height: inherit;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tbody,
+      td {
+        display: block;
+      }
+
+      tbody,
+      tr {
+        height: 100%;
+      }
+
+      tbody {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      tr {
+        align-content: flex-start;
+        align-items: center;
+        background: $theme-color-sidebar-schedule-event-background;
+        display: flex;
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        font-size: 11px;
+        text-transform: uppercase;
+        width: 175px;
+
+        & + tr {
+          border-left: 1px solid $theme-color-sidebar-schedule-event-border;
+        }
+      }
+
+      td {
+        border: 0;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+
+        &:first-child {
+          color: $theme-color-sidebar-schedule-event-sport;
+          flex: 1 0 100%;
+          font-weight: 700;
+          padding-bottom: 3px;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-top: 5px;
+        }
+
+        &:nth-child(2),
+        &:nth-child(4) {
+          flex: 1 0 auto;
+          overflow: hidden;
+          padding-left: 10px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 70%;
+
+          & + td {
+            float: right;
+            flex: 0 0 auto;
+            padding-right: 10px;
+            text-align: right;
+            width: 35px;
+          }
+
+          a {
+            color: inherit;
+            pointer-events: none;
+
+            &[href="#W"] {
+              position: relative;
+
+              &::before {
+                border-bottom: 5px solid transparent;
+                border-left: 7px solid;
+                border-top: 5px solid transparent;
+                color: $theme-color-sidebar-schedule-event-win-indicator;
+                content: '';
+                display: inline-block;
+                left: -10px;
+                position: absolute;
+                top: 2px;
+              }
+            }
+          }
+        }
+
+        &:nth-child(6),
+        &:nth-child(7) {
+          color: $theme-color-sidebar-schedule-event-text-supplementary;
+          font-size: 10px;
+          flex: 1 0 auto;
+          line-height: 1.5;
+          padding-bottom: 3px;
+          padding-top: 3px;
+        }
+
+        &:nth-child(6) {
+          padding-left: 10px;
+        }
+
+        &:nth-child(7) {
+          padding-right: 10px;
+          text-align: right;
+        }
+      }
+
+      &:hover {
+        tr {
+          background-color: $theme-color-sidebar-schedule-event-background-inactive;
+
+          &:hover {
+            background-color: $theme-color-sidebar-schedule-event-background;
+          }
+        }
+      }
+    }
+  }
+}

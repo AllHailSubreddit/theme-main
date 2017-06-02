@@ -9,9 +9,26 @@
   "author": "Seth Lopez <sethlopezme@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
-    "node-sass": "^4.2.0"
+    "chokidar-cli": "^1.2.0",
+    "cssnano": "^3.10.0",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-pngquant": "^5.0.0",
+    "node-sass": "^4.5.2",
+    "postcss-cli": "^3.0.0"
   },
   "scripts": {
-    "build": "node-sass --output-style=compressed src/styles.scss build/styles.css"
+    "build": "npm run --silent clean && npm run --silent setup && (npm run --silent task:images & npm run --silent task:styles)",
+    "clean": "rm -rf build",
+    "develop:main": "npm run --silent clean && npm run --silent setup && (npm run --silent watch:images & npm run --silent watch:styles:main)",
+    "setup": "mkdir build build/styles build/images",
+    "clean:images": "rm -rf build/images/**/*.{jpg,png}",
+    "clean:styles": "npm run --silent clean:styles:main",
+    "clean:styles:main": "rm build/styles/theme-main.css",
+    "task:images": "imagemin src/images/**/*.{jpg,png} --plugin=pngquant --out-dir=build/images",
+    "task:styles": "npm run --silent task:styles:main",
+    "task:styles:main": "node-sass --output-style=expanded src/styles/theme-main.scss | postcss -c . > build/styles/theme-main.css",
+    "watch:images": "chokidar 'src/images/**/*.{jpg,png}' --command 'npm run --silent task:images' --silent --initial",
+    "watch:styles": "npm run --silent watch:styles:main",
+    "watch:styles:main": "chokidar 'src/styles/theme-main.scss' 'src/styles/common/**/*.scss' --command 'npm run --silent task:styles:main' --silent --initial"
   }
 }

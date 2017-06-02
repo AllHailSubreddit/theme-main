@@ -1,0 +1,23 @@
+@mixin clearfix {
+  &::after {
+    clear: both;
+    display: table;
+    width: 100%;
+  }
+}
+
+@mixin sprite($key) {
+  @if $key == null {
+    @error "$key cannot be null";
+  }
+
+  @if map-has-key($theme-sprites, $key) == false {
+    @error "Unknown sprite \"#{$key}\"";
+  }
+
+  $position: map-get($theme-sprites, $key);
+  background-image: $theme-sprites-url;
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: $theme-sprites-size;
+}

@@ -1,0 +1,113 @@
+$_author-alphanums: a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9;
+$_author-alphanum-colors: (
+  a: $theme-color-author-text-a,
+  b: $theme-color-author-text-b,
+  c: $theme-color-author-text-c,
+  d: $theme-color-author-text-d,
+  e: $theme-color-author-text-e,
+  f: $theme-color-author-text-f,
+  g: $theme-color-author-text-g,
+  h: $theme-color-author-text-h,
+  i: $theme-color-author-text-i,
+  j: $theme-color-author-text-j,
+  k: $theme-color-author-text-k,
+  l: $theme-color-author-text-l,
+  m: $theme-color-author-text-m,
+  n: $theme-color-author-text-n,
+  o: $theme-color-author-text-o,
+  p: $theme-color-author-text-p,
+  q: $theme-color-author-text-q,
+  r: $theme-color-author-text-r,
+  s: $theme-color-author-text-s,
+  t: $theme-color-author-text-t,
+  u: $theme-color-author-text-u,
+  v: $theme-color-author-text-v,
+  w: $theme-color-author-text-w,
+  x: $theme-color-author-text-x,
+  y: $theme-color-author-text-y,
+  z: $theme-color-author-text-z,
+  0: $theme-color-author-text-0,
+  1: $theme-color-author-text-1,
+  2: $theme-color-author-text-2,
+  3: $theme-color-author-text-3,
+  4: $theme-color-author-text-4,
+  5: $theme-color-author-text-5,
+  6: $theme-color-author-text-6,
+  7: $theme-color-author-text-7,
+  8: $theme-color-author-text-8,
+  9: $theme-color-author-text-9
+);
+
+.thing {
+  .entry {
+    overflow: visible;
+  }
+
+  .tagline {
+    font-size: .75em; /* 12/16 */
+  }
+
+  /* needs extra specificity */
+  .author.author {
+    font-weight: 400;
+
+    @each $_author-alphanum in $_author-alphanums {
+      &[class*="id-t2_#{$_author-alphanum}"] {
+        color: map-get($_author-alphanum-colors, $_author-alphanum);
+      }
+    }
+
+    @each $_moderator in $moderators {
+      &[class*="#{map-get($moderator-ids, $_moderator)}"] {
+        color: $theme-color-primary;
+      }
+    }
+
+    &.submitter,
+    &.moderator {
+      border-radius: 1.4792em; /* 17.75/12 */
+      font-style: normal;
+      padding-bottom: .1667em; /* 2/12 */
+      padding-left: .8337em; /* 10/12 */
+      padding-right: .8337em; /* 10/12 */
+      padding-top: .0833em; /* 1/12 */
+
+      &::before {
+        display: inline-block;
+        font-weight: 700;
+        margin-right: 5px;
+      }
+    }
+
+    &.submitter {
+      background-color: $theme-color-author-submitter-background;
+      color: $theme-color-author-submitter-text;
+
+      &::before {
+        content: 'OP';
+      }
+    }
+
+    &.moderator {
+      background-color: $theme-color-author-moderator-background;
+      color: $theme-color-author-moderator-text;
+
+      &::before {
+        content: 'M';
+      }
+    }
+  }
+
+  .userattrs {
+    display: none;
+  }
+
+  &.collapsed {
+    .author {
+      &.submitter,
+      &.moderator {
+        background-color: $color-gray-dark;
+      }
+    }
+  }
+}
