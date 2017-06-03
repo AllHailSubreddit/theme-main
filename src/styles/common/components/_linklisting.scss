@@ -149,12 +149,8 @@
       .flat-list {
         .flairselectbtn {
           display: none;
-        }
-      }
 
-      &[data-can-ban] {
-        .flat-list {
-          .flairselectbtn {
+          .moderator & {
             display: inline;
             color: inherit;
             font-weight: inherit;

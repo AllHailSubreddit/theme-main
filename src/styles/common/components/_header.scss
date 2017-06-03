@@ -6,9 +6,15 @@
   &::after {
     background: url(%%header%%) no-repeat;
     background-size: cover;
-    content: '';
+    color: $theme-color-header-banner-text;
+    content: '/r/AllHail';
     display: block;
-    height: 15.625em; /* 250/16 */
+    font-size: 8em;
+    font-weight: 700;
+    height: 1.9531em; /* 250/128 */
+    letter-spacing: -.0391em; /* -5/128 */
+    line-height: 1.9531em; /* 250/128 */
+    text-align: center;
     width: 100%;
   }
 }
@@ -120,14 +126,14 @@
 
   .pagename {
     background-color: $theme-color-header-logo-background;
+    color: transparent;
     font-size: initial;
     font-weight: initial;
     height: 5em; /* 80/16 */
     margin: 0;
-    text-indent: 100%;
+    pointer-events: none;
     top: -1.5625em; /* -25/16 */
     vertical-align: initial;
-    white-space: nowrap;
     width: 5.625em; /* 90/16 */
 
     &::before,
@@ -162,14 +168,15 @@
       background-image: url(%%logo-l1c4%%);
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
-      height: 4.375em; /* 70/16 */
-      left: 1.25em; /* 20/16 */
+      background-size: 4.375em; /* 70/16 */
+      height: 100%;
+      left: 0;
       overflow: hidden;
+      pointer-events: initial;
       text-indent: 100%;
-      top: .3125em; /* 5/16 */
+      top: 0;
       white-space: nowrap;
-      width: 4.375em; /* 70/16 */
+      width: 6.25em; /* 100/16 */
       z-index: 1;
     }
   }

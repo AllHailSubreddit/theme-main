@@ -157,6 +157,8 @@
 
           &:hover {
             background-color: $theme-color-sidebar-schedule-event-background;
+            box-shadow: 0 0 5px 0 $theme-color-sidebar-schedule-box-shadow;
+            position: relative;
           }
         }
       }

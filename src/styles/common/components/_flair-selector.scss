@@ -1,11 +1,13 @@
 /* needs more specificity */
 .flairselector.flairselector.flairselector {
+  background-color: $theme-color-modal-background;
   border: 0;
   border-radius: 2px;
   color: $theme-color-modal-text;
   font-size: 16px;
   left: 50% !important;
   margin: 0;
+  overflow: hidden;
   padding: 0 !important;
   position: fixed;
   top: 50% !important;
@@ -25,14 +27,15 @@
   }
 
   form {
-    align-content: center;
+    align-items: center;
     border-top: 1px solid $theme-color-modal-separator;
     display: flex;
-    padding: 1.25em 1.5em 1.5em; /* 20/16, 24/16, 24/16 */
+    padding: 1.5em; /* 24/16 */
 
     button {
-      background: transparent;
+      background: $theme-color-modal-button-background;
       border: 0;
+      border-radius: 2px;
       color: $theme-color-modal-button-text;
       height: 2.25em; /* 36/16 */
       line-height: 2.25em; /* 36/16 */
@@ -64,13 +67,13 @@
     margin: 0;
     text-align: left;
 
-    .linkflair {
-      display: block;
-    }
-  }
+    .flairremove {
+      display: block !important;
 
-  .flairremove {
-    display: block !important;
+      &:only-child {
+        display: none !important;
+      }
+    }
   }
 
   .customizer {
@@ -78,27 +81,42 @@
     margin: 0;
   }
 
+  .status {
+    background-color: $theme-color-modal-background;
+    box-shadow: 0 0 0 100vh $theme-color-modal-background;
+    font-size: inherit;
+    left: 50%;
+    margin: 0;
+    max-width: 100%;
+    padding: 1.5em; /* 24/16 */
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: inital;
+    width: 100%;
+
+    &:empty {
+      display: none;
+    }
+  }
+
   @media (orientation: landscape) {
-    box-shadow: 0 0 0 100vw rgba(0, 0, 0, .25),
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, .4),
                 0 10px 10px rgba(0, 0, 0, .25),
                 0 12px 24px rgba(0, 0, 0, .25);
   }
 
   @media (orientation: portrait) {
-    box-shadow: 0 0 0 100vh rgba(0, 0, 0, .25),
+    box-shadow: 0 0 0 100vh rgba(0, 0, 0, .3),
                 0 10px 10px rgba(0, 0, 0, .25),
                 0 12px 24px rgba(0, 0, 0, .25);
-  }
-
-  .tagline & {
-
   }
 }
 
 /* needs more specificity */
 .flairoptionpane.flairoptionpane {
   margin: 0;
-  max-height: 14.0625em; /* 225/16 */
+  max-height: 17.1875em; /* 275/16 */
   text-align: left;
 
   ul {
@@ -117,12 +135,17 @@
     text-align: left !important;
     width: 100% !important;
 
+    a {
+      pointer-events: none;
+    }
+
     &:hover {
       background-color: $theme-color-modal-item-selected;
     }
 
     &.selected {
       background-color: $theme-color-modal-item-selected;
+      border: 1px dashed;
     }
   }
 }

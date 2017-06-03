@@ -15,20 +15,16 @@ a[href^="#i/"],
 .flair {
   background-color: transparent;
   border: 0;
-  overflow: hidden;
   padding: 0;
+  position: relative;
   vertical-align: middle;
   white-space: nowrap;
   width: 30px;
 
   &::before {
     content: '';
-    margin-right: 3px;
-  }
-
-  &:hover {
-    text-indent: initial;
-    width: auto;
+    position: absolute;
+    top: -1.25em; /* -15/12 */
   }
 }
 
