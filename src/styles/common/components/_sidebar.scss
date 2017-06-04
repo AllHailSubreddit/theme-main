@@ -64,6 +64,8 @@
         align-content: flex-start;
         align-items: center;
         background: $theme-color-sidebar-schedule-event-background;
+        border-left: 1px solid $theme-color-sidebar-schedule-event-border;
+        border-right: 1px solid $theme-color-sidebar-schedule-event-border;
         display: flex;
         flex: 0 0 auto;
         flex-wrap: wrap;
@@ -72,7 +74,7 @@
         width: 175px;
 
         & + tr {
-          border-left: 1px solid $theme-color-sidebar-schedule-event-border;
+          margin-left: -1px;
         }
       }
 
@@ -114,6 +116,7 @@
             pointer-events: none;
 
             &[href="#W"] {
+              font-weight: 700;
               position: relative;
 
               &::before {
