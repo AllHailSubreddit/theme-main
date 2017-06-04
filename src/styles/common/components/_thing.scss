@@ -50,6 +50,7 @@ $_author-alphanum-colors: (
   /* needs extra specificity */
   .author.author {
     font-weight: 400;
+    margin: 0;
 
     @each $_author-alphanum in $_author-alphanums {
       &[class*="id-t2_#{$_author-alphanum}"] {
