@@ -1,7 +1,7 @@
 .comment {
   .child {
     border-left: 2px dotted $theme-color-comment-child-border;
-    margin-left: 1.9375em; /* 31/16 */
+    margin-left: .625em; /* 10/16 */
     margin-top: .9375em; /* 15/16 */
     width: 100%;
 
@@ -27,13 +27,13 @@
     }
   }
 
+  .clearleft + & {
+    margin-top: .9375em; /* 15/16 */
+  }
+
   .child & {
     padding-bottom: 0;
     padding-right: 0;
     padding-top: 0;
-
-    & ~ .comment {
-      margin-top: .9375em; /* 15/16 */
-    }
   }
 }

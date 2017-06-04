@@ -74,63 +74,14 @@ $_author-alphanum-colors: (
   .tagline {
     margin-bottom: .1667em; /* 2/12 */
     margin-top: .1667em; /* 2/12 */
+
+    & > * {
+      vertical-align: middle;
+    }
   }
 
   .stickied-tagline {
     color: inherit;
-  }
-
-  .usertext {
-    font-size: inherit;
-    padding: 0;
-  }
-
-  .usertext-body {
-    background-color: transparent;
-    font-size: inherit;
-    padding: 0;
-  }
-
-  .md {
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-    font-size: .875em; /* 14/16 */
-    margin: 0;
-    margin-bottom: .5357em; /* 7.5/14 */
-    margin-top: .5357em; /* 7.5/14 */
-    max-width: 57.1429em; /* 800/14 */
-    padding: 0;
-  }
-
-  .flat-list {
-    a {
-      font-weight: 400;
-      margin: 0;
-      padding: 0;
-
-      &:hover {
-        color: $theme-color-linklisting-meta-link-hover;
-      }
-    }
-
-    li {
-      line-height: inherit;
-      padding: 0;
-
-      & + li {
-        margin-left: .8333em; /* 10/12 */
-      }
-    }
-
-    .flairselectbtn {
-      color: $theme-color-primary;
-      font-weight: 700;
-
-      &::before {
-        content: 'add ';
-      }
-    }
   }
 
   /* needs extra specificity */
@@ -187,6 +138,59 @@ $_author-alphanum-colors: (
 
   .userattrs {
     display: none;
+  }
+
+  .usertext {
+    font-size: inherit;
+    padding: 0;
+  }
+
+  .usertext-body {
+    background-color: transparent;
+    font-size: inherit;
+    padding: 0;
+  }
+
+  .md {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    font-size: .875em; /* 14/16 */
+    margin: 0;
+    margin-bottom: .5357em; /* 7.5/14 */
+    margin-top: .5357em; /* 7.5/14 */
+    max-width: 57.1429em; /* 800/14 */
+    padding: 0;
+  }
+
+  .flat-list {
+    a {
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+
+      &:hover {
+        color: $theme-color-linklisting-meta-link-hover;
+      }
+    }
+
+    li {
+      line-height: inherit;
+      padding: 0;
+
+      & + li {
+        margin-left: .8333em; /* 10/12 */
+      }
+    }
+
+    .flairselectbtn {
+      color: $theme-color-primary;
+      font-weight: 700;
+
+      &::before {
+        content: 'add ';
+      }
+    }
   }
 
   &.collapsed {

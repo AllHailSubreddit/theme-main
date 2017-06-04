@@ -1,40 +1,77 @@
 a[href^="#i/"],
-.flair::before {
-  background-color: transparent;
-  background-image: url(%%sprite-icons%%);
-  background-size: 495px 1053px;
-  border: 0;
+.flair {
+  position: relative;
+
+  &::before {
+    background-color: transparent;
+    background-image: url(%%sprite-icons%%);
+    background-size: 41.25em 87.75em; /* 495/12, 1053/12 */
+    border: 0;
+    content: '';
+    display: block;
+    height: 2.5em; /* 30/12 */
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    vertical-align: middle;
+    width: 2.5em; /* 30/12 */
+  }
+}
+
+a[href^="#i/"] {
   display: inline-block;
-  height: 30px;
-  padding: 0;
-  pointer-events: none;
-  vertical-align: middle;
-  width: 30px;
+  width: 2.5em; /* 30/12 */
+
+  &::before {
+    top: -1.8em; /* -18/10 */
+  }
+
+  .link &,
+  .comment & {
+    font-size: .7143em; /* 10/14 */
+  }
 }
 
 .flair {
   background-color: transparent;
-  border: 0;
-  margin-bottom: .8333em; /* 10/12 */
-  margin-top: .8333em; /* 10/12 */
-  padding: 0;
-  position: relative;
+  border: 1px solid $theme-color-primary;
+  border-radius: 1.5em; /* 18/12 */
+  color: $theme-color-primary;
+  margin-right: .8333em; /* 10/12 */
+  padding-bottom: .1667em; /* 2/12 */
+  padding-left: .8333em; /* 10/12 */
+  padding-right: .8333em; /* 10/12 */
+  padding-top: .0833em; /* 1/12 */
   vertical-align: middle;
   white-space: nowrap;
-  width: 30px;
 
   &::before {
-    content: '';
-    position: absolute;
-    top: -1.25em; /* -15/12 */
+    left: -2.9167em; /* -35/12 */
+    top: -50%;
+  }
+
+  &[class*="flair-"] {
+    margin-left: 2.9167em; /* 35/12 */
+  }
+
+  &:empty {
+    border: 0;
+    margin-bottom: .8333em; /* 10/12 */
+    margin-right: 0;
+    margin-top: .8333em; /* 10/12 */
+    padding: 0;
+
+    &::before {
+      top: -1.25em; /* -15/12 */
+    }
   }
 }
 
 @function sprite-icon-background-position($_row, $_column) {
   $_row: $_row - 1;
   $_column: $_column - 1;
-  $_x: ($_column * -30px) + ($_column * -1px);
-  $_y: ($_row * -30px) + ($_row * -1px);
+  $_x: ($_column * -2.5em) + ($_column * -.0833em); /* -30/12, -1/12 */
+  $_y: ($_row * -2.5em) + ($_row * -.0833em); /* -30/12, -1/12 */
 
   @return $_x $_y;
 }
@@ -51,7 +88,7 @@ $sprite-icons: (
     ("winged-short", "winged-the-ville"),
     ("ville", "the-ville"),
     ("2013-national-champions"),
-    ("L-up", "hand-sign")
+    ("l", "L", "L-up", "hand-sign")
   ),
   // row 2
   (
@@ -275,7 +312,7 @@ $sprite-icons: (
    $_selectors: ();
 
    @each $_class in $_col {
-     $_selectors: append($_selectors, "a[href=\"#i/#{$_class}\"]", comma);
+     $_selectors: append($_selectors, "a[href^=\"#i/#{$_class}\"]::before", comma);
      $_selectors: append($_selectors, ".flair-#{$_last}::before", comma);
    }
 
