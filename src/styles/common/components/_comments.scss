@@ -27,13 +27,13 @@
     }
   }
 
-  .clearleft + & {
-    margin-top: .9375em; /* 15/16 */
-  }
-
   .child & {
     padding-bottom: 0;
     padding-right: 0;
     padding-top: 0;
+
+    & ~ .comment {
+      margin-top: .9375em; /* 15/16 */
+    }
   }
 }
