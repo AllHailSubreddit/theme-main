@@ -64,6 +64,8 @@ $theme-color-linklisting-expando-text: $color-white !default;
 $theme-color-linklisting-meta-text: $color-gray-dark !default;
 $theme-color-linklisting-meta-link-hover: $theme-color-primary !default;
 $theme-color-linklisting-sticky-background: $color-gray-light !default;
+$theme-color-comment-new-background: lighten($color-yellow, 40%) !default;
+$theme-color-comment-child-border: $color-gray !default;
 $theme-color-voting-likes: $color-red !default;
 $theme-color-voting-unvoted: $color-gray !default;
 $theme-color-voting-dislikes: $color-aqua !default;
@@ -157,6 +159,7 @@ $moderator-ids: (
 @import 'common/components/sidebar';
 @import 'common/components/thing';
 @import 'common/components/linklisting';
+@import 'common/components/comments';
 @import 'common/components/voting';
 @import 'common/components/ads';
 @import 'common/components/icons';

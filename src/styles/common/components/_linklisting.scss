@@ -1,25 +1,11 @@
 .linklisting {
   & > .link {
-    display: flex;
-    margin-bottom: 0;
-    padding: .9375em; /* 15/16 */
-
     .rank {
       display: none;
     }
 
-    .midcol {
-      margin-left: 0;
-      margin-right: .9375em; /* 15/16 */
-    }
-
     .thumbnail {
       display: none;
-    }
-
-    & > .entry {
-      flex: 1;
-      margin: 0;
     }
 
     .linkflairlabel {
@@ -73,56 +59,6 @@
       &.expanded {
         &::before {
           content: '-';
-        }
-      }
-    }
-
-    .approval-checkmark {
-      display: none;
-    }
-
-    .tagline,
-    .flat-list {
-      color: $theme-color-linklisting-meta-text;
-      font-size: .75em; /* 12/16 */
-      padding: 0;
-    }
-
-    .tagline {
-      margin-bottom: .1667em; /* 2/12 */
-      margin-top: .1667em; /* 2/12 */
-    }
-
-    .stickied-tagline {
-      color: inherit;
-    }
-
-    .flat-list {
-      a {
-        font-weight: 400;
-        margin: 0;
-        padding: 0;
-
-        &:hover {
-          color: $theme-color-linklisting-meta-link-hover;
-        }
-      }
-
-      li {
-        line-height: inherit;
-        padding: 0;
-
-        & + li {
-          margin-left: .8333em; /* 10/12 */
-        }
-      }
-
-      .flairselectbtn {
-        color: $theme-color-primary;
-        font-weight: 700;
-
-        &::before {
-          content: 'add ';
         }
       }
     }
