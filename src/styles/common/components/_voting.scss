@@ -8,11 +8,13 @@
   margin: 0;
   margin-left: 0;
   margin-right: .3125em !important; /* 5/16 */
-  width: 4.5ch !important;
+  overflow: visible;
+  width: 2.5ch !important;
 
   .arrow {
     height: 20px;
     margin: 0;
+    transition: transform 250ms ease-out;
     width: 20px;
 
     &:first-child {
@@ -26,6 +28,17 @@
     & + .arrow {
       margin-top: .625em; /* 10/16 */
     }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.25);
+      transition: transform 250ms ease-out;
+    }
+  }
+
+  .up,
+  .upmod {
+    transform-origin: bottom;
   }
 
   .up {
@@ -34,6 +47,11 @@
 
   .upmod {
     @include sprite(upvote-selected);
+  }
+
+  .down,
+  .downmod {
+    transform-origin: top;
   }
 
   .down {
