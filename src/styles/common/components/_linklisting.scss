@@ -24,6 +24,11 @@
       text-overflow: inherit;
     }
 
+    p.title {
+      font-size: inherit;
+      margin: 0;
+    }
+
     a.title {
       color: $theme-color-linklisting-title-text;
       font-size: inherit;
@@ -31,6 +36,15 @@
 
       &:visited {
         color: $theme-color-linklisting-title-text-visited;
+      }
+    }
+
+    .domain {
+      color: $theme-color-linklisting-meta-text;
+      font-size: .75em; /* 12/16 */
+
+      a {
+        color: inherit;
       }
     }
 
@@ -107,11 +121,13 @@
       }
     }
 
-    &.thing.stickied {
-      background-color: $theme-color-linklisting-sticky-background;
-
-      .title {
+    &.stickied {
+      a.title {
         color: $theme-color-linklisting-title-text;
+
+        &:visited {
+          color: $theme-color-linklisting-title-text;
+        }
       }
 
       .expando-button {
@@ -127,6 +143,10 @@
             color: $theme-color-primary;
           }
         }
+      }
+
+      .comments-page & {
+        background-color: transparent;
       }
     }
   }

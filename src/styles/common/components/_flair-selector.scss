@@ -30,6 +30,7 @@
     align-items: center;
     border-top: 1px solid $theme-color-modal-separator;
     display: flex;
+    flex-wrap: wrap;
     padding: 1.5em; /* 24/16 */
 
     button {
@@ -77,8 +78,14 @@
   }
 
   .customizer {
-    display: none;
     margin: 0;
+    margin-top: .625em; /* 10/16 */
+    order: 3;
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
   }
 
   .status {

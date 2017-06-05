@@ -34,6 +34,15 @@
       transform: scale(1.25);
       transition: transform 250ms ease-out;
     }
+
+    &.archived {
+      opacity: .25;
+      pointer-events: none;
+
+      & ~ .score {
+        opacity: .75;
+      }
+    }
   }
 
   .up,

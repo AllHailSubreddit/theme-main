@@ -54,6 +54,10 @@ $theme-color-sidebar-schedule-event-border: $color-gray !default;
 $theme-color-sidebar-schedule-event-sport: $theme-color-primary !default;
 $theme-color-sidebar-schedule-event-win-indicator: $theme-color-primary !default;
 $theme-color-sidebar-schedule-event-text-supplementary: $color-gray-dark !default;
+$theme-color-voting-likes: $color-red !default;
+$theme-color-voting-unvoted: $color-gray !default;
+$theme-color-voting-dislikes: $color-aqua !default;
+$theme-color-thing-sticky-background: lighten($color-gray-light, 2%) !default;
 $theme-color-linklisting-link-border: $color-gray !default;
 $theme-color-linklisting-flair-text: $theme-color-secondary !default;
 $theme-color-linklisting-title-text: $theme-color-primary !default;
@@ -63,52 +67,52 @@ $theme-color-linklisting-expando-background-hover: $theme-color-accent !default;
 $theme-color-linklisting-expando-text: $color-white !default;
 $theme-color-linklisting-meta-text: $color-gray-dark !default;
 $theme-color-linklisting-meta-link-hover: $theme-color-primary !default;
-$theme-color-linklisting-sticky-background: $color-gray-light !default;
 $theme-color-comment-new-background: lighten($color-yellow, 40%) !default;
 $theme-color-comment-child-border: $color-gray !default;
-$theme-color-voting-likes: $color-red !default;
-$theme-color-voting-unvoted: $color-gray !default;
-$theme-color-voting-dislikes: $color-aqua !default;
-$theme-color-author-text-a: #04b3cb !default;
-$theme-color-author-text-b: #28a259 !default;
-$theme-color-author-text-c: #037315 !default;
-$theme-color-author-text-d: #8aa86c !default;
-$theme-color-author-text-e: #682ac7 !default;
-$theme-color-author-text-f: #df9c1b !default;
-$theme-color-author-text-g: #bc1193 !default;
-$theme-color-author-text-h: #3b91d3 !default;
-$theme-color-author-text-i: #913d84 !default;
-$theme-color-author-text-j: #2563f3 !default;
-$theme-color-author-text-k: #be6fcc !default;
-$theme-color-author-text-l: #cabc4c !default;
-$theme-color-author-text-m: #219d88 !default;
-$theme-color-author-text-n: #6aab0b !default;
-$theme-color-author-text-o: #c3912e !default;
-$theme-color-author-text-p: #2e5b81 !default;
-$theme-color-author-text-q: #be1263 !default;
-$theme-color-author-text-r: #73b1e5 !default;
-$theme-color-author-text-s: #f15c83 !default;
-$theme-color-author-text-t: #780fa1 !default;
-$theme-color-author-text-u: #74901e !default;
-$theme-color-author-text-v: #334dcf !default;
-$theme-color-author-text-w: #089a8a !default;
-$theme-color-author-text-x: #ec8d6d !default;
-$theme-color-author-text-y: #e9a312 !default;
-$theme-color-author-text-z: #000 !default;
-$theme-color-author-text-0: $theme-color-author-text-a !default;
-$theme-color-author-text-1: $theme-color-author-text-b !default;
-$theme-color-author-text-2: $theme-color-author-text-c !default;
-$theme-color-author-text-3: $theme-color-author-text-d !default;
-$theme-color-author-text-4: $theme-color-author-text-e !default;
-$theme-color-author-text-5: $theme-color-author-text-f !default;
-$theme-color-author-text-6: $theme-color-author-text-g !default;
-$theme-color-author-text-7: $theme-color-author-text-h !default;
-$theme-color-author-text-8: $theme-color-author-text-i !default;
-$theme-color-author-text-9: $theme-color-author-text-j !default;
-$theme-color-author-submitter-background: $color-aqua !default;
-$theme-color-author-submitter-text: $color-white !default;
-$theme-color-author-moderator-background: $theme-color-primary !default;
-$theme-color-author-moderator-text: $color-white !default;
+$theme-color-author-a: #04b3cb !default;
+$theme-color-author-b: #28a259 !default;
+$theme-color-author-c: #037315 !default;
+$theme-color-author-d: #8aa86c !default;
+$theme-color-author-e: #682ac7 !default;
+$theme-color-author-f: #df9c1b !default;
+$theme-color-author-g: #bc1193 !default;
+$theme-color-author-h: #3b91d3 !default;
+$theme-color-author-i: #913d84 !default;
+$theme-color-author-j: #2563f3 !default;
+$theme-color-author-k: #be6fcc !default;
+$theme-color-author-l: #cabc4c !default;
+$theme-color-author-m: #219d88 !default;
+$theme-color-author-n: #6aab0b !default;
+$theme-color-author-o: #c3912e !default;
+$theme-color-author-p: #2e5b81 !default;
+$theme-color-author-q: #be1263 !default;
+$theme-color-author-r: #73b1e5 !default;
+$theme-color-author-s: #f15c83 !default;
+$theme-color-author-t: #780fa1 !default;
+$theme-color-author-u: #74901e !default;
+$theme-color-author-v: #334dcf !default;
+$theme-color-author-w: #089a8a !default;
+$theme-color-author-x: #ec8d6d !default;
+$theme-color-author-y: #e9a312 !default;
+$theme-color-author-z: #000 !default;
+$theme-color-author-0: $theme-color-author-a !default;
+$theme-color-author-1: $theme-color-author-b !default;
+$theme-color-author-2: $theme-color-author-c !default;
+$theme-color-author-3: $theme-color-author-d !default;
+$theme-color-author-4: $theme-color-author-e !default;
+$theme-color-author-5: $theme-color-author-f !default;
+$theme-color-author-6: $theme-color-author-g !default;
+$theme-color-author-7: $theme-color-author-h !default;
+$theme-color-author-8: $theme-color-author-i !default;
+$theme-color-author-9: $theme-color-author-j !default;
+$theme-color-author-text: $color-white !default;
+$theme-color-author-attribute-text: $color-white !default;
+$theme-color-author-attribute-submitter-background: $color-aqua !default;
+$theme-color-author-attribute-moderator-background: $theme-color-primary !default;
+$theme-color-markdown-hr-background: $color-gray !default;
+$theme-color-markdown-table-border: $color-gray !default;
+$theme-color-blockquote-border: $theme-color-primary !default;
+$theme-color-blackquote-text: $color-slate !default;
 $theme-color-footer-background: $color-black !default;
 $theme-color-footer-text: $color-white !default;
 $theme-color-modal-background: $color-white !default;
@@ -127,19 +131,17 @@ $theme-sprites: (
   upvote-selected: 0 -22px
 );
 
-$moderators: (
+$moderator-names: (
+  // Laschoni,
+  // Addyct,
+  // the_woot_shoot,
+  // JebusOfEagles,
+  // lolihax,
+  // pushECX,
   pushECX
+  // AllHail_Bot
 );
-// $moderators: (
-//   Laschoni,
-//   Addyct,
-//   the_woot_shoot,
-//   JebusOfEagles,
-//   lolihax,
-//   pushECX,
-//   AllHail_Bot
-// );
-$moderator-ids: (
+$moderator-names-ids: (
   Laschoni: id-t2_4wzr5,
   Addyct: id-t2_4musd,
   the_woot_shoot: id-t2_5tlj5,
@@ -148,6 +150,21 @@ $moderator-ids: (
   pushECX: id-t2_gp41s,
   AllHail_Bot: id-t2_14apja
 );
+$moderator-ids: (
+  // id-t2_4wzr5,
+  // id-t2_4musd,
+  // id-t2_5tlj5,
+  // id-t2_9fjbm,
+  // id-t2_ebhqp,
+  // id-t2_gp41s,
+  id-t2_gp41s
+  // id-t2_14apja
+);
+$moderator-ids-selector: ();
+
+@each $_moderator-id in $moderator-ids {
+  $moderator-ids-selector: append($moderator-ids-selector, "&[class~=\"#{$_moderator-id}\"]", comma);
+}
 
 @import 'common/utils/functions';
 @import 'common/utils/mixins.scss';
@@ -157,11 +174,12 @@ $moderator-ids: (
 @import 'common/general';
 @import 'common/components/header';
 @import 'common/components/sidebar';
+@import 'common/components/voting';
 @import 'common/components/thing';
+@import 'common/components/ads';
 @import 'common/components/linklisting';
 @import 'common/components/comments';
-@import 'common/components/voting';
-@import 'common/components/ads';
+@import 'common/components/markdown';
 @import 'common/components/icons';
 @import 'common/components/flair-selector';
 @import 'common/components/footer';

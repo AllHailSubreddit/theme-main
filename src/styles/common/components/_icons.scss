@@ -13,14 +13,16 @@ a[href^="#i/"],
     padding: 0;
     pointer-events: none;
     position: absolute;
-    vertical-align: middle;
     width: 2.5em; /* 30/12 */
   }
 }
 
 a[href^="#i/"] {
+  color: inherit;
+  cursor: text;
   display: inline-block;
-  width: 2.5em; /* 30/12 */
+  min-width: 2.1429em; /* 30/14 */
+  pointer-events: none;
 
   &::before {
     top: -1.8em; /* -18/10 */
@@ -28,26 +30,37 @@ a[href^="#i/"] {
 
   .link &,
   .comment & {
-    font-size: .7143em; /* 10/14 */
+    &::before {
+      font-size: .7143em; /* 10/14 */
+    }
+  }
+
+  &[href^="#i/large/"],
+  .comment .md p:only-child &:only-child {
+    min-width: 3.2143em; /* 45/14 */
+    height: 3.2143em; /* 45/14 */
+
+    &::before {
+      font-size: 1.2857em; /* 18/14 */
+      top: .1111em; /* 2/18 */
+    }
   }
 }
 
 .flair {
   background-color: transparent;
   border: 1px solid $theme-color-primary;
-  border-radius: 1.5em; /* 18/12 */
+  border-radius: 1.3334em; /* 16/12 */
   color: $theme-color-primary;
+  line-height: 1.3334; /* 16/12 */
   margin-right: .8333em; /* 10/12 */
-  padding-bottom: .1667em; /* 2/12 */
-  padding-left: .8333em; /* 10/12 */
-  padding-right: .8333em; /* 10/12 */
-  padding-top: .0833em; /* 1/12 */
-  vertical-align: middle;
+  padding-left: .6667em; /* 8/12 */
+  padding-right: .6667em; /* 8/12 */
   white-space: nowrap;
 
   &::before {
     left: -2.9167em; /* -35/12 */
-    top: -50%;
+    top: -.5833em; /* -7/12 */
   }
 
   &[class*="flair-"] {
@@ -56,13 +69,11 @@ a[href^="#i/"] {
 
   &:empty {
     border: 0;
-    margin-bottom: .8333em; /* 10/12 */
     margin-right: 0;
-    margin-top: .8333em; /* 10/12 */
     padding: 0;
 
     &::before {
-      top: -1.25em; /* -15/12 */
+      top: -1.6667em; /* -20/12 */
     }
   }
 }
@@ -83,7 +94,10 @@ $sprite-icons: (
     ("l1c4"),
     ("english-l"),
     ("mascot"),
-    ("football-mascot", "mascot-football"),
+    ("football", "football-mascot", "mascot-football"),
+    ("football-alt", "football-mascot-alt", "mascot-football-alt"),
+    ("basketball", "basketball-mascot", "mascot-basketball"),
+    ("helmet", "football-helmet"),
     ("winged-full", "winged-louisville"),
     ("winged-short", "winged-the-ville"),
     ("ville", "the-ville"),
@@ -312,7 +326,7 @@ $sprite-icons: (
    $_selectors: ();
 
    @each $_class in $_col {
-     $_selectors: append($_selectors, "a[href^=\"#i/#{$_class}\"]::before", comma);
+     $_selectors: append($_selectors, "a[href^=\"#i/\"][href$=\"/#{$_class}\"]::before", comma);
      $_selectors: append($_selectors, ".flair-#{$_last}::before", comma);
    }
 

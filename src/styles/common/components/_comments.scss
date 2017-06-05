@@ -1,4 +1,9 @@
 .comment {
+  .score {
+    margin-left: .4167em; /* 5/12 */
+    margin-right: .4167em; /* 5/12 */
+  }
+
   .child {
     border-left: 2px dotted $theme-color-comment-child-border;
     margin-left: .625em; /* 10/16 */
@@ -10,7 +15,10 @@
     }
   }
 
-  .deepthread {
+  .deepthread,
+  .morecomments {
+    font-size: inherit;
+
     a {
       font-size: inherit;
     }
