@@ -9,6 +9,8 @@
   margin-left: 0;
   margin-right: .9375em !important; /* 15/16 */
   overflow: visible;
+  position: relative;
+  top: .125em; /* 2/16 */
   width: 2.5ch !important;
 
   .arrow {
@@ -35,7 +37,7 @@
       transition: transform 250ms ease-out;
     }
 
-    &.archived {
+    &.archived.archived {
       opacity: .25;
       pointer-events: none;
 
@@ -60,7 +62,14 @@
 
   .down,
   .downmod {
+    opacity: .25;
+    pointer-events: none;
     transform-origin: top;
+
+    .subscriber & {
+      pointer-events: initial;
+      opacity: 1;
+    }
   }
 
   .down {

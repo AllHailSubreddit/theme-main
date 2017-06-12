@@ -72,8 +72,6 @@ $_author-alphanum-colors: (
   }
 
   .tagline {
-    margin-bottom: .1667em; /* 2/12 */
-
     & > * {
       vertical-align: baseline;
     }
@@ -87,33 +85,34 @@ $_author-alphanum-colors: (
     color: inherit;
   }
 
-  /* needs extra specificity */
+  /* needs more specificity */
   .author.author {
-    border-radius: .25em; /* 3/12 */
-    color: $theme-color-author-text;
     display: inline-block;
     font-weight: 400;
-    line-height: 1.3333; /* 16/12 */
     margin: 0;
-    padding-left: .4167em; /* 5/12 */
-    padding-right: .4167em; /* 5/12 */
     position: relative;
-    z-index: 2;
 
     @each $_author-alphanum in $_author-alphanums {
       &[class*="id-t2_#{$_author-alphanum}"] {
-        background-color: map-get($_author-alphanum-colors, $_author-alphanum);
-
-        & + .userattrs {
-          a {
-            background-color: lighten(map-get($_author-alphanum-colors, $_author-alphanum), 12%);
-          }
-        }
+        color: map-get($_author-alphanum-colors, $_author-alphanum);
       }
     }
 
     #{$moderator-ids-selector} {
+      color: $theme-color-primary;
+    }
+
+    &.moderator {
       background-color: $theme-color-primary;
+      border-radius: 1.3333em; /* 16/12 */
+      color: $theme-color-author-text;
+      line-height: 1.3333; /* 16/12 */
+      padding-left: .4167em; /* 5/12 */
+      padding-right: .4167em; /* 5/12 */
+
+      &::after {
+        display: none;
+      }
 
       & + .userattrs {
         a {
@@ -128,27 +127,22 @@ $_author-alphanum-colors: (
     font-size: 0;
 
     a {
-      border-radius: 0 .25em .25em 0; /* 3/12, 3/12 */
       color: $theme-color-author-attribute-text;
       display: inline-block;
       font-size: 12px;
       font-weight: 700;
       line-height: 1.3333; /* 16/12 */
-      margin-left: -.1667em; /* -2/12 */
-      padding-left: .5em; /* 6/12 */
-      padding-right: .4167em; /* 5/12 */
-      position: relative;
+      padding-left: .1667em; /* 2/12 */
+      padding-right: .1667em; /* 2/12 */
 
-      & + a {
-        padding-left: .1667em; /* 2/12 */
+      &:first-child {
+        margin-left: -.5em; /* -6/12 */
+        padding-left: .75em; /* 9/12 */
       }
 
-      &.moderator {
-        z-index: 0;
-      }
-
-      &.submitter {
-        z-index: 1;
+      &:last-child {
+        border-radius: 0 1.3333em 1.3333em 0; /* 16/12, 16/12 */
+        padding-right: .4167em; /* 5/12 */
       }
     }
   }
@@ -208,8 +202,11 @@ $_author-alphanum-colors: (
 
   .stamp {
     border: 0;
+    border-radius: 1.3333em; /* 16/12 */
     font-size: inherit;
     line-height: inherit;
+    padding-left: .4167em; /* 5/12 */
+    padding-right: .4167em; /* 5/12 */
   }
 
   .nsfw-stamp {
@@ -231,12 +228,8 @@ $_author-alphanum-colors: (
       background-color: $theme-color-comment-collapsed;
 
       & + .userattrs {
-        a:first-child {
+        a {
           background-color: lighten($theme-color-comment-collapsed, 11%);
-
-          & + a {
-            background-color: lighten($theme-color-comment-collapsed, 17.5%);
-          }
         }
       }
     }

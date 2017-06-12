@@ -13,6 +13,9 @@
   max-width: 57.1429em; /* 800/14 */
   padding: 0;
 
+  h4,
+  h5,
+  h6,
   p,
   hr,
   ol,
@@ -24,13 +27,52 @@
     margin-top: 1.0714em; /* 15/14 */
   }
 
+  h1 {
+    font-size: 1.4286em; /* 20/14 */
+    margin-bottom: .75em; /* 15/20 */
+    margin-top: .75em; /* 15/20 */
+  }
+
+  h2 {
+    font-size: 1.2857em; /* 18/14 */
+    margin-bottom: .8333em; /* 15/18 */
+    margin-top: .8333em; /* 15/18 */
+  }
+
+  h3 {
+    font-size: 1.1429em; /* 16/14 */
+    margin-bottom: .9375em; /* 15/16 */
+    margin-top: .9375em; /* 15/16 */
+  }
+
   hr {
     background-color: $theme-color-markdown-hr-background;
+  }
+
+  ol,
+  ul {
+    padding-left: 1.2857em; /* 18/14 */
   }
 
   li {
     margin-bottom: .5357em; /* 7.5/14 */
     margin-top: .5357em; /* 7.5/14 */
+
+    ol,
+    ul {
+      margin-bottom: .5357em; /* 7.5/14 */
+      margin-top: .5357em; /* 7.5/14 */
+    }
+
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   pre {
@@ -40,19 +82,61 @@
 
   table {
     font-size: .8571em; /* 12/14 */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   th,
   td {
     border: 1px solid $theme-color-markdown-table-border;
+
+    &:empty {
+      border-left-width: 0;
+      border-right-width: 0;
+    }
+
+    &:first-child {
+      border-left-width: 1px;
+    }
+
+    &:last-child {
+      border-right-width: 1px;
+    }
+  }
+
+  th {
+    border-top: 5px solid $theme-color-primary;
+  }
+
+  tr {
+    &:nth-child(odd) {
+      td {
+        background-color: $theme-color-markdown-table-row-background;
+      }
+    }
+
+    &:hover {
+      th,
+      td {
+        background-color: $theme-color-markdown-table-row-background-hover;
+      }
+    }
   }
 
   blockquote {
+    background-color: $color-gray-light;
     border-left: 5px solid $theme-color-blockquote-border;
-    color: $theme-color-blackquote-text;
+    color: $theme-color-blockquote-text;
+    font-style: italic;
     margin-left: 0;
     padding: 0;
     padding-left: 1.0714em; /* 15/14 */
+    padding-bottom: 1.0714em; /* 15/14 */
+    padding-top: 1.0714em; /* 15/14 */
+
+    em {
+      font-style: normal;
+    }
   }
 
   textarea {
