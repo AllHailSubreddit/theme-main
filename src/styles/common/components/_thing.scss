@@ -1,43 +1,3 @@
-$_author-alphanums: a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9;
-$_author-alphanum-colors: (
-  a: $theme-color-author-a,
-  b: $theme-color-author-b,
-  c: $theme-color-author-c,
-  d: $theme-color-author-d,
-  e: $theme-color-author-e,
-  f: $theme-color-author-f,
-  g: $theme-color-author-g,
-  h: $theme-color-author-h,
-  i: $theme-color-author-i,
-  j: $theme-color-author-j,
-  k: $theme-color-author-k,
-  l: $theme-color-author-l,
-  m: $theme-color-author-m,
-  n: $theme-color-author-n,
-  o: $theme-color-author-o,
-  p: $theme-color-author-p,
-  q: $theme-color-author-q,
-  r: $theme-color-author-r,
-  s: $theme-color-author-s,
-  t: $theme-color-author-t,
-  u: $theme-color-author-u,
-  v: $theme-color-author-v,
-  w: $theme-color-author-w,
-  x: $theme-color-author-x,
-  y: $theme-color-author-y,
-  z: $theme-color-author-z,
-  0: $theme-color-author-0,
-  1: $theme-color-author-1,
-  2: $theme-color-author-2,
-  3: $theme-color-author-3,
-  4: $theme-color-author-4,
-  5: $theme-color-author-5,
-  6: $theme-color-author-6,
-  7: $theme-color-author-7,
-  8: $theme-color-author-8,
-  9: $theme-color-author-9
-);
-
 /* needs more specificity */
 .thing.thing {
   display: flex;
@@ -87,64 +47,23 @@ $_author-alphanum-colors: (
 
   /* needs more specificity */
   .author.author {
+    color: $theme-color-primary;
     display: inline-block;
     font-weight: 400;
     margin: 0;
     position: relative;
 
-    @each $_author-alphanum in $_author-alphanums {
-      &[class*="id-t2_#{$_author-alphanum}"] {
-        color: map-get($_author-alphanum-colors, $_author-alphanum);
-      }
-    }
-
-    #{$moderator-ids-selector} {
-      color: $theme-color-primary;
+    &.submitter {
+      color: $theme-color-author-submitter-text;
     }
 
     &.moderator {
-      background-color: $theme-color-primary;
-      border-radius: 1.3333em; /* 16/12 */
-      color: $theme-color-author-text;
-      line-height: 1.3333; /* 16/12 */
-      padding-left: .4167em; /* 5/12 */
-      padding-right: .4167em; /* 5/12 */
-
-      &::after {
-        display: none;
-      }
-
-      & + .userattrs {
-        a {
-          background-color: lighten($theme-color-primary, 11%);
-        }
-      }
+      font-weight: 700;
     }
   }
 
   .userattrs {
-    color: transparent;
-    font-size: 0;
-
-    a {
-      color: $theme-color-author-attribute-text;
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 1.3333; /* 16/12 */
-      padding-left: .1667em; /* 2/12 */
-      padding-right: .1667em; /* 2/12 */
-
-      &:first-child {
-        margin-left: -.5em; /* -6/12 */
-        padding-left: .75em; /* 9/12 */
-      }
-
-      &:last-child {
-        border-radius: 0 1.3333em 1.3333em 0; /* 16/12, 16/12 */
-        padding-right: .4167em; /* 5/12 */
-      }
-    }
+    display: none;
   }
 
   .usertext {

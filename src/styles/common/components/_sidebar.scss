@@ -11,13 +11,13 @@
   }
 
   .titlebox,
-  .usertext,
-  .md-container,
-  .md {
+  .usertext {
     font-size: inherit;
   }
 
   .md {
+    font-size: .875em; /* 14/16 */
+
     table:last-of-type {
       @include clearfix;
       background: $theme-color-sidebar-schedule-background;
