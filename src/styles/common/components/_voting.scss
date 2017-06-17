@@ -97,6 +97,10 @@
       color: $theme-color-voting-dislikes;
     }
   }
+
+  .link & {
+    font-weight: normal;
+  }
 }
 
 @keyframes vote-up {

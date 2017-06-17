@@ -9,7 +9,7 @@
   .menuarea {
     color: $theme-color-commentarea-menuarea-text;
     font-size: .75em; /* 12/16 */
-    margin: 0 1.25em 1.25em 4.8333em; /* 15/12, 15/12, 58/12 */
+    margin: 0 1.25em 1.25em 4.5833em; /* 15/12, 15/12, 55/12 */
 
     .spacer {
       margin: 0;
@@ -50,7 +50,7 @@
 
   & > .usertext {
     font-size: inherit;
-    margin: 0 .9375em .9375em 3.625em; /* 15/16, 15/16, 58/16 */
+    margin: 0 .9375em .9375em 3.4375em; /* 15/16, 15/16, 55/16 */
     overflow: visible;
   }
 
@@ -59,7 +59,7 @@
     border: 1px solid $theme-color-infobar-border;
     border-radius: 3px;
     font-size: .75em; /* 12/16 */
-    margin: 0 1.25em 1.25em 4.8333em; /* 15/12, 15/12, 58/12 */
+    margin: 0 1.25em 1.25em 4.5833em; /* 15/12, 15/12, 55/12 */
     max-width: 66.6667em; /* 800/12 */
     padding: .8333em 1.25em; /* 10/12, 15/12 */
     width: 100%;

@@ -32,6 +32,12 @@
     margin-top: .5357em; /* 7.5/14 */
     padding: 0;
     padding-top: .5357em; /* 7.5/14 */
+
+    & > table {
+      margin: .625em 0 !important; /* 7.5/12 */
+      max-width: none;
+      width: 100%;
+    }
   }
 }
 
