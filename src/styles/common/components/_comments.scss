@@ -1,3 +1,76 @@
+.commentarea {
+  border-top: 2px dotted $theme-color-commentarea-border;
+  padding-top: .9375em; /* 15/16 */
+
+  .panestack-title {
+    display: none;
+  }
+
+  .menuarea {
+    color: $theme-color-commentarea-menuarea-text;
+    font-size: .75em; /* 12/16 */
+    margin: 0 1.25em 1.25em 4.8333em; /* 15/12, 15/12, 58/12 */
+
+    .spacer {
+      margin: 0;
+
+      & + .spacer {
+        margin-left: 1.25em; /* 15/12 */
+      }
+    }
+
+    /* needs more specificity */
+    .toggle.toggle {
+      margin-left: .8333em; /* 10/12 */
+
+      a {
+        color: inherit;
+        font-size: inherit;
+        font-weight: 400;
+
+        &:hover {
+          color: $theme-color-commentarea-menuarea-text-hover;
+          text-decoration: underline;
+        }
+      }
+
+      .error {
+        font-size: inherit;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .help-hoverable {
+      font-size: inherit;
+    }
+  }
+
+  & > .usertext {
+    font-size: inherit;
+    margin: 0 .9375em .9375em 3.625em; /* 15/16, 15/16, 58/16 */
+    overflow: visible;
+  }
+
+  & > .comment-visits-box {
+    background-color: $theme-color-infobar-background;
+    border: 1px solid $theme-color-infobar-border;
+    border-radius: 3px;
+    font-size: .75em; /* 12/16 */
+    margin: 0 1.25em 1.25em 4.8333em; /* 15/12, 15/12, 58/12 */
+    max-width: 66.6667em; /* 800/12 */
+    padding: .8333em 1.25em; /* 10/12, 15/12 */
+    width: 100%;
+
+    .title {
+      font-size: inherit;
+      font-weight: 400;
+    }
+  }
+}
+
 /* needs more specificity */
 .comment.comment {
   /* needs more specificity */

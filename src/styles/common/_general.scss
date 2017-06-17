@@ -21,4 +21,65 @@ body {
   & > .spacer {
     margin-bottom: 0;
   }
+
+  & > .menuarea {
+    font-size: inherit;
+    margin: 0;
+    padding: .625em .9375em; /* 10/16, 15/16 */
+  }
+}
+
+.error {
+  color: $color-red;
+  font-size: inherit;
+}
+
+#noresults {
+  font-size: .875em; /* 14/16 */
+  margin: 1.0714em 0; /* 15/14 */
+  padding: 0 1.0714em; /* 15/14 */
+  width: 100%;
+
+  .commentarea & {
+    padding-left: 4.1429em; /* 58/14 */
+  }
+}
+
+.nav-buttons {
+  font-size: inherit;
+  margin-bottom: .9375em; /* 15/16 */
+  margin-top: .9375em; /* 15/16 */
+}
+
+.nextprev,
+.next-suggestions {
+  display: block;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  .separator {
+    display: none;
+  }
+
+  a {
+    background-color: $theme-color-nextprev-link-background;
+    border: 1px solid $theme-color-nextprev-link-border;
+    color: $theme-color-nextprev-link-text;
+    display: inline-block;
+    font-size: 16px;
+    padding: .625em .9375em; /* 10/16, 15/16 */
+
+    &:hover {
+      background-color: $theme-color-nextprev-link-background-hover;
+      border: 1px solid $theme-color-nextprev-link-border;
+    }
+  }
+}
+
+.prev-button {
+  & ~ .next-button {
+    margin-left: 15px;
+  }
 }

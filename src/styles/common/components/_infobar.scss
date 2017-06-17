@@ -1,0 +1,21 @@
+.infobar {
+  background-color: $theme-color-infobar-background;
+  border: 1px solid $theme-color-infobar-border;
+  border-radius: 3px;
+  color: $theme-color-infobar-text;
+  font-size: 12px;
+  margin: 1.25em; /* 15/12 */
+  padding: .8333em 1.25em; /* 10/12, 15/12 */
+
+  &.mellow {
+    background-color: $theme-color-infobar-background;
+    border-color: $theme-color-infobar-border;
+  }
+
+  .commentarea .menuarea & {
+    margin-bottom: -1.25em; /* -15/12 */
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 66.6667em; /* 800/12 */
+  }
+}

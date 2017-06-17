@@ -1,5 +1,38 @@
 .md-container {
   font-size: inherit;
+  margin: 0;
+  max-width: 50em; /* 800/16 */
+  padding: 0;
+  width: 100% !important;
+
+  .bottom-area {
+    font-size: .75em; /* 12/16 */
+    margin-bottom: .625em; /* 7.5/12 */
+  }
+
+  button {
+    margin: 0;
+
+    & + button {
+      margin-left: .8333em; /* 10/12 */
+    }
+  }
+
+  .help-toggle,
+  a.reddiquette {
+    font-size: inherit;
+    margin-left: .8333em; /* 10/12 */
+    margin-top: 0;
+  }
+
+  .markhelp {
+    border-top: 2px dotted $theme-color-commentarea-border;
+    font-size: .875em; /* 14/16 */
+    margin: 0;
+    margin-top: .5357em; /* 7.5/14 */
+    padding: 0;
+    padding-top: .5357em; /* 7.5/14 */
+  }
 }
 
 .md {
@@ -8,8 +41,8 @@
   border-radius: 0;
   font-size: .875em; /* 14/16 */
   margin: 0;
-  margin-bottom: .5357em; /* 7.5/14 */
-  margin-top: .5357em; /* 7.5/14 */
+  margin-bottom: .5357em !important; /* 7.5/14 */
+  margin-top: .5357em !important; /* 7.5/14 */
   max-width: 57.1429em; /* 800/14 */
   padding: 0;
 
@@ -124,8 +157,8 @@
 
   blockquote {
     background-color: $color-gray-light;
-    border-left: 5px solid $theme-color-blockquote-border;
-    color: $theme-color-blockquote-text;
+    border-left: 5px solid $theme-color-markdown-blockquote-border;
+    color: $theme-color-markdown-blockquote-text;
     font-style: italic;
     margin-left: 0;
     padding: 0;
@@ -148,9 +181,20 @@
   }
 
   textarea {
+    background-color: $theme-color-markdown-textarea-background;
+    border: 1px solid $theme-color-markdown-textarea-border;
+    border-radius: 3px;
+    display: block;
     font-size: inherit;
     font-family: Monaco, Consolas, 'Lucida Console', monospace;
+    height: 6.9643em; /* 97.5/14 */
     line-height: inherit;
-    width: 100%;
+    padding: .3571em; /* 5/14 */
+    resize: vertical;
+    width: 100% !important;
+
+    &:focus {
+      background-color: $theme-color-markdown-textarea-background-hover;
+    }
   }
 }
