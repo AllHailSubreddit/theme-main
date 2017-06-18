@@ -73,6 +73,11 @@
 
 /* needs more specificity */
 .comment.comment {
+  .expand {
+    margin-right: .4167em; /* 5/12 */
+    padding: 0;
+  }
+
   /* needs more specificity */
   .author.author {
     color: $theme-color-primary;
@@ -85,6 +90,15 @@
   .score {
     margin-left: .4167em; /* 5/12 */
     margin-right: .4167em; /* 5/12 */
+  }
+
+  .edited-timestamp {
+    font-size: 0;
+
+    &::before {
+      content: " (" attr(title) ")";
+      font-size: 12px;
+    }
   }
 
   .child {

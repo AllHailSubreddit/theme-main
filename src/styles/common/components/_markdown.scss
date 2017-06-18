@@ -52,6 +52,7 @@
   max-width: 57.1429em; /* 800/14 */
   padding: 0;
 
+  h3,
   h4,
   h5,
   h6,
@@ -65,22 +66,30 @@
     margin-top: 1.0714em; /* 15/14 */
   }
 
+  h1,
+  h2 {
+    border-bottom: 1px solid;
+  }
+
   h1 {
     font-size: 1.4286em; /* 20/14 */
     margin-bottom: .75em; /* 15/20 */
-    margin-top: .75em; /* 15/20 */
+    margin-top: 1.5em; /* 30/20 */
   }
 
   h2 {
-    font-size: 1.2857em; /* 18/14 */
-    margin-bottom: .8333em; /* 15/18 */
-    margin-top: .8333em; /* 15/18 */
+    font-size: 1.2143em; /* 17/14 */
+    font-weight: 700;
+    margin-bottom: .8824em; /* 15/17 */
+    margin-top: 1.7647em; /* 30/17 */
   }
 
-  h3 {
-    font-size: 1.1429em; /* 16/14 */
-    margin-bottom: .9375em; /* 15/16 */
-    margin-top: .9375em; /* 15/16 */
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1em;
+    text-transform: uppercase;
   }
 
   hr {
@@ -120,11 +129,12 @@
 
   table {
     font-size: .8571em; /* 12/14 */
-    margin: 1.25em auto; /* 15/12 */
+    margin: 1.25em 0; /* 15/12 */
   }
 
   th,
   td {
+    background-color: $theme-color-background;
     border: 1px solid $theme-color-markdown-table-border;
     padding: .4167em .8333em; /* 5/12, 10/12 */
 
@@ -187,20 +197,15 @@
   }
 
   textarea {
-    background-color: $theme-color-markdown-textarea-background;
     border: 1px solid $theme-color-markdown-textarea-border;
     border-radius: 3px;
     display: block;
     font-size: inherit;
     font-family: Monaco, Consolas, 'Lucida Console', monospace;
-    height: 6.9643em; /* 97.5/14 */
-    line-height: inherit;
+    min-height: 6.9643em; /* 97.5/14 */
+    line-height: 1.5;
     padding: .3571em; /* 5/14 */
     resize: vertical;
     width: 100% !important;
-
-    &:focus {
-      background-color: $theme-color-markdown-textarea-background-hover;
-    }
   }
 }
