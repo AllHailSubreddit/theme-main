@@ -21,7 +21,6 @@
     table:last-of-type {
       @include clearfix;
       background: $theme-color-sidebar-schedule-background;
-      box-shadow: 0 0 5px $theme-color-header-tabs-box-shadow;
       color: $theme-color-sidebar-schedule-text;
       display: flex;
       font-size: 16px;
@@ -73,6 +72,14 @@
         font-size: 11px;
         text-transform: uppercase;
         width: 175px;
+
+        &:first-child {
+          border-left: 0;
+        }
+
+        &:last-child {
+          border-right: 0;
+        }
 
         & + tr {
           margin-left: -1px;

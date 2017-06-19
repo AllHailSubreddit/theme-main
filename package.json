@@ -12,9 +12,9 @@
     "chokidar-cli": "^1.2.0",
     "cssnano": "^3.10.0",
     "imagemin-cli": "^3.0.0",
-    "imagemin-pngquant": "^5.0.0",
-    "node-sass": "^4.5.2",
-    "postcss-cli": "^3.0.0"
+    "imagemin-pngquant": "^5.0.1",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.0"
   },
   "scripts": {
     "build": "npm run --silent clean && npm run --silent setup && (npm run --silent task:images & npm run --silent task:styles)",

@@ -104,6 +104,10 @@
       line-height: inherit;
       padding: 0;
 
+      &:empty {
+        display: none;
+      }
+
       & + li {
         margin-left: .8333em; /* 10/12 */
       }
@@ -116,6 +120,10 @@
       &::before {
         content: 'add ';
       }
+    }
+
+    .rescrape-button {
+      display: none;
     }
   }
 
