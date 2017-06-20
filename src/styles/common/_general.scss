@@ -7,7 +7,8 @@
 html {
   background-attachment: fixed;
   background-image: url(%%background-left%%), url(%%background-right%%);
-  background-position: calc(50% - 730px) -20px, calc(50% - -710px) 0;
+  /* must use subtraction here because of how reddit removes spaces */
+  background-position: calc(50% - 740px) -20px, calc(50% - -725px) 0;
   background-repeat: no-repeat, no-repeat;
   background-size: auto 750px, auto 750px;
   box-sizing: border-box;
