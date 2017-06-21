@@ -1,6 +1,9 @@
 .side {
+  background-color: transparent;
   font-size: 1em;
   margin: 0;
+  padding: 0 .9375em; /* 15/16 */
+  width: 20.625em; /* 330/16 */
 
   &::before {
     background: url(%%sidebar%%) center no-repeat;

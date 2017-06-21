@@ -8,7 +8,7 @@ html {
   background-attachment: fixed;
   background-image: url(%%background-left%%), url(%%background-right%%);
   /* must use subtraction here because of how reddit removes spaces */
-  background-position: calc(50% - 780px) 0px, calc(50% - -690px) 0;
+  background-position: calc(50% - 780px) 0px, calc(50% - -685px) 0;
   background-repeat: no-repeat, no-repeat;
   background-size: auto 720px, auto 800px;
   box-sizing: border-box;
@@ -16,7 +16,8 @@ html {
 }
 
 body {
-  background-color: $theme-color-body-background;
+  background-image: linear-gradient(to left, $theme-color-sidebar-background, $theme-color-sidebar-background 20.625em, $theme-color-content-background 20.625em); /* 330/16, 330/16 */
+  background-repeat: repeat-y, repeat-y;
   box-shadow: 0 0 25px 5px $theme-color-body-box-shadow;
   font-size: 1em;
   line-height: 1.25;
@@ -30,7 +31,8 @@ body {
 
 .content[role="main"] {
   margin: 0;
-  width: calc(100% - 300px);
+  overflow: hidden;
+  width: calc(100% - 20.625em); /* 330/16 */
 
   & > .spacer {
     margin-bottom: 0;
