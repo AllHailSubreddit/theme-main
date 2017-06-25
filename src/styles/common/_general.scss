@@ -116,6 +116,14 @@ body {
 .stylesheet-customize-container {
   padding: 0 .9375em; /* 15/16 */
 
+  .sheets {
+    margin-right: 0;
+
+    .col > div {
+      margin: 0;
+    }
+  }
+
   .image-upload {
     margin-bottom: .9375em; /* 15/16 */
   }
