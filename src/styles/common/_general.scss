@@ -6,7 +6,7 @@
 
 html {
   background-attachment: fixed;
-  background-image: url(%%background-left%%), url(%%background-right%%);
+  background-image: url(%%html-left-custom%%), url(%%html-right-custom%%);
   /* must use subtraction here because of how reddit removes spaces */
   background-position: calc(50% - 780px) 0px, calc(50% - -685px) 0;
   background-repeat: no-repeat, no-repeat;
@@ -16,8 +16,11 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to left, $theme-color-sidebar-background, $theme-color-sidebar-background 20.625em, $theme-color-content-background 20.625em); /* 330/16, 330/16 */
-  background-repeat: repeat-y, repeat-y;
+  background-color: $theme-color-body-background;
+  background-image: url(%%body-background%%);
+  background-repeat: repeat-y;
+  background-position: top right;
+  background-size: 330px 1px;
   box-shadow: 0 0 25px 5px $theme-color-body-box-shadow;
   font-size: 1em;
   line-height: 1.25;
@@ -97,5 +100,35 @@ body {
 .prev-button {
   & ~ .next-button {
     margin-left: 15px;
+  }
+}
+
+.hover-bubble.multi-selector {
+  font-size: .75em; /* 12/16 */
+  margin-right: -9.25em; /* -111/12 */
+  margin-top: -3.1667em; /* -38/12 */
+}
+
+.pretty-form {
+  width: 100%;
+}
+
+.stylesheet-customize-container {
+  padding: 0 .9375em; /* 15/16 */
+
+  .image-upload {
+    margin-bottom: .9375em; /* 15/16 */
+  }
+
+  .image-preview-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .9375em 0; /* 15/16 */
+
+    li {
+      flex: 0 0 50%;
+      font-size: .75em; /* 12/16 */
+      padding: 0;
+    }
   }
 }

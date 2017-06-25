@@ -41,10 +41,24 @@
 
   .domain {
     color: $theme-color-linklisting-meta-text;
-    font-size: .75em; /* 12/16 */
+    display: block;
+    font-size: 0;
 
     a {
       color: inherit;
+      font-size: 12px;
+      margin-top: .25em; /* 3/12 */
+
+      &::before {
+        color: $theme-color-linklisting-meta-text;
+        content: 'from';
+        display: inline-block;
+        margin-right: .3333em; /* 4/12 */
+      }
+
+      &:hover {
+        color: $theme-color-linklisting-meta-link-hover;
+      }
     }
   }
 

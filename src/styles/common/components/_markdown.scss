@@ -66,11 +66,6 @@
     margin-top: 1.0714em; /* 15/14 */
   }
 
-  h1,
-  h2 {
-    border-bottom: 1px solid;
-  }
-
   h1 {
     font-size: 1.4286em; /* 20/14 */
     margin-bottom: .75em; /* 15/20 */
@@ -89,7 +84,14 @@
   h5,
   h6 {
     font-size: 1em;
+    letter-spacing: 1px;
     text-transform: uppercase;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-weight: 400;
   }
 
   hr {
@@ -130,6 +132,10 @@
   table {
     font-size: .8571em; /* 12/14 */
     margin: 1.25em 0; /* 15/12 */
+
+    .side & {
+      width: 100%;
+    }
   }
 
   th,
@@ -185,6 +191,10 @@
     em {
       font-style: normal;
     }
+  }
+
+  sup {
+    font-size: .8571em; /* 12/14 */
   }
 
   a {

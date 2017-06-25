@@ -1,11 +1,11 @@
 #header {
   border: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   z-index: initial;
 
   &::after {
-    background: url(%%header%%) no-repeat;
+    background: url(%%header-custom%%) no-repeat;
     background-size: cover;
     color: $theme-color-header-banner-text;
     content: '';
@@ -63,9 +63,11 @@
     border-top: 5px solid $theme-color-header-subreddits-dropdown-border;
     box-shadow: 0 0 5px $theme-color-header-subreddits-dropdown-box-shadow;
     color: $theme-color-header-subreddits-dropdown-text;
+    height: 22.7273em; /* 250/11 */
     letter-spacing: 0;
     line-height: 1.5;
     margin: 0;
+    overflow: auto;
     padding: 1.0909em .9091em; /* 12/11, 10/11 */
 
     a {
@@ -163,7 +165,7 @@
     }
 
     a {
-      background-image: url(%%logo-l1c4%%);
+      background-image: url(%%logo%%);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 4.375em; /* 70/16 */

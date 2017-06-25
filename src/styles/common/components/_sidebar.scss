@@ -1,21 +1,282 @@
 .side {
   background-color: transparent;
+  background-image: url(%%sidebar-background%%), url(%%sidebar-custom%%);
+  background-position: .9375em .9375em, .9375em 17.4688em; /* 15/16, 15/16, 15/16, 279.5/16 */
+  background-repeat: no-repeat, no-repeat;
+  background-size: 4.6875em, 18.75em; /* 75/16, 300/16 */
   font-size: 1em;
   margin: 0;
-  padding: 0 .9375em; /* 15/16 */
+  padding: 37.1563em .9375em 1.875em; /* 594.5/16, 15/16, 30/16 */
   width: 20.625em; /* 330/16 */
 
-  &::before {
-    background: url(%%sidebar%%) center no-repeat;
-    content: '';
+  .spacer {
+    margin: 0;
+  }
+
+  .sidebox,
+  .sidecontentbox {
+    margin-bottom: .9375em; /* 15/16 */
+    margin-top: .9375em; /* 15/16 */
+
+    .title {
+      h1 {
+        color: inherit;
+        display: block;
+        font-size: 1em;
+        margin-bottom: .9375em; /* 15/16 */
+        margin-top: 1.875em; /* 30/16 */
+      }
+
+      .collapse-button {
+        display: none;
+      }
+    }
+
+    .content {
+      border: 0;
+      font-size: .875em; /* 14/16 */
+      padding: 0;
+
+      li {
+        margin-bottom: .7143em; /* 10/14 */
+        margin-top: .7143em; /* 10/14 */
+
+        &.more {
+          text-align: left;
+
+          a {
+            color: #000;
+          }
+        }
+      }
+
+      a {
+        background-color: transparent;
+        color: $theme-color-primary;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+
+      .flair {
+        font-size: .8571em; /* 12/14 */
+      }
+    }
+  }
+
+  .create,
+  .redditname {
+    display: none;
+  }
+
+  .subscribers,
+  .users-online,
+  .subscribe-button,
+  .tagline {
+    margin: 0;
+    padding: 0 .9375em; /* 15/16 */
+    position: absolute;
+    right: 0;
+    width: 20.625em; /* 330/16 */
+  }
+
+  .subscribers,
+  .users-online {
+    padding-left: 6.5625em; /* 105/16 */
+    text-align: center;
+  }
+
+  .subscribers {
+    top: 24.0625em; /* 385/16 */
+
+    .number {
+      color: $theme-color-sidebar-subscribers-text;
+      font-size: 20px;
+      font-weight: 700;
+
+      &::after {
+        content: ' Cards Fans';
+      }
+    }
+
+    .word {
+      display: none;
+    }
+  }
+
+  .users-online {
+    /* 25px lower than .subscribers */
+    top: 25.625em; /* 410/16 */
+
+    &::before {
+      content: none;
+    }
+
+    .number {
+      cursor: initial;
+
+      &::after {
+        cursor: inherit;
+        content: ' Viewing';
+      }
+    }
+
+    .word {
+      display: none;
+    }
+  }
+
+  .subscribe-button {
+    text-align: center;
+    /* 50px lower than .users-online */
+    top: 28.75em; /* 460/16 */
+
+    .option {
+      background-image: none;
+      background-color: $theme-color-sidebar-subscribe-background;
+      border-radius: 3px;
+      border: 0;
+      color: $theme-color-sidebar-subscribe-text;
+      display: none;
+      font-size: 1em;
+      font-weight: 400;
+      height: 2.25em;
+      line-height: 2.25em;
+      padding: 0;
+      text-transform: capitalize;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  .submit {
+    margin-bottom: 0;
+    margin-top: 0;
+    position: absolute;
+    /* 51px lower than .subscribe-button */
+    top: 31.9375em; /* 511/16 */
+    width: 8.9063em; /* 142.5/16 */
+
+    a {
+      background-color: $theme-color-sidebar-submit-background;
+      border-radius: 3px;
+      color: $theme-color-sidebar-submit-text;
+      display: block;
+      font-size: 1em;
+      height: 2.25em;
+      line-height: 2.25em;
+    }
+
+    .morelink {
+      background: transparent;
+      border: 0;
+      font-size: 1em;
+      font-weight: 400;
+      height: auto;
+      letter-spacing: 0;
+      line-height: inherit;
+      position: static;
+    }
+
+    .nub {
+      display: none;
+    }
+
+    &-link {
+      right: 10.7813em; /* 172.5/16 */
+    }
+
+    &-text {
+      right: .9375em; /* 15/16 */
+    }
+  }
+
+  .flairtoggle {
+    display: none;
+  }
+
+  .tagline {
+    color: transparent;
+    font-size: 1em;
+    text-align: center;
+    top: 562px;
+
+    .flair {
+      border: 0;
+      border-radius: 0;
+      font-size: .75em; /* 12/16 */
+      height: 2.5em; /* 30/12 */
+      line-height: inherit;
+      margin-left: 0;
+      margin-right: 0;
+      overflow: hidden;
+      padding: 0;
+      text-indent: 100%;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: 2.5em; /* 30/12 */
+
+      &::before {
+        position: static;
+      }
+    }
+
+    .author {
+      display: none;
+    }
+
+    .userattrs {
+      display: none;
+    }
+
+    .flairselectbtn {
+      &::after {
+        content: ' flair';
+      }
+    }
+
+    a {
+      color: $theme-color-sidebar-editflair-text;
+    }
+  }
+
+  .helplink.helplink {
+    background-color: transparent;
+    border-radius: 3px;
+    color: $theme-color-sidebar-helplink-text;
     display: block;
-    height: 300px;
-    width: 100%;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0;
+    position: absolute;
+    right: .9375em; /* 15/16 */
+    text-align: center;
+    /* 51px lower than .submit */
+    top: 37.3125em; /* 597/16 */
+    width: 18.75em; /* 300/16 */
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  .leavemoderator,
+  .leavecontributor-button {
+    display: none;
   }
 
   .titlebox,
   .usertext {
     font-size: inherit;
+  }
+
+  .usertext {
+    margin-top: .9375em; /* 15/16 */
   }
 
   .md {
@@ -179,6 +440,37 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .bottom {
+    font-size: .75em; /* 12/16 */
+    margin-bottom: 2.5em; /* 30/12 */
+    margin-top: 1.25em; /* 15/12 */
+    padding-top: 1.25em; /* 15/12 */
+
+    a {
+      color: $theme-color-primary;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    .flair {
+      display: none;
+    }
+  }
+
+  .account-activity-box {
+    a {
+      color: #000;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
       }
     }
   }
