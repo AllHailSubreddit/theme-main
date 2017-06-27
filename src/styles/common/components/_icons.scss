@@ -5,7 +5,7 @@ a[href^="#i/"],
   &::before {
     background-color: transparent;
     background-image: url(%%sprite-icons%%);
-    background-size: 41.25em 87.75em; /* 495/12, 1053/12 */
+    background-size: 41.25em 90.3333em; /* 495/12, 1084/12 */
     border: 0;
     content: '';
     display: block;
@@ -119,9 +119,31 @@ $sprite-icons: (
   // row 2
   (
     ("ncaa"),
-    ("march-madness")
+    ("accn", "acc-network"),
+    ("accne", "acc-network-extra"),
+    ("btn", "big-ten-network"),
+    ("cbssn", "cbs-sports", "cbs-sports-network"),
+    ("espn"),
+    ("espn2", "espn-2"),
+    ("espn3", "espn-3"),
+    ("espnu", "espn-u"),
+    ("watch-espn"),
+    ("fox"),
+    ("fox-sports"),
+    ("fs1"),
+    ("longhorn-network"),
+    ("nbc"),
+    ("nbc-sports", "nbc-sports-network")
   ),
   // row 3
+  (
+    ("pac12-network"),
+    ("secn", "sec-network"),
+    ("tbs"),
+    ("tnt"),
+    ("trutv", "tru-tv")
+  ),
+  // row 4
   (
     ("aec", "american-east", "american-east-conference"),
     ("albany", "university-at-albany"),

@@ -426,6 +426,13 @@
           &:nth-child(7) {
             padding-right: 1em; /* 10/10 */
             text-align: right;
+
+            a[href^="#i/"] {
+              font-size: 14px;
+              margin-bottom: 0;
+              margin-top: 0;
+              min-width: 1.875em;
+            }
           }
         }
 
