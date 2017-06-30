@@ -71,6 +71,10 @@
     .flairremove {
       display: block !important;
 
+      a {
+        color: $theme-color-primary;
+      }
+
       &:only-child {
         display: none !important;
       }
@@ -107,16 +111,17 @@
     }
   }
 
-  @media (orientation: landscape) {
-    box-shadow: 0 0 0 100vw rgba(0, 0, 0, .4),
-                0 10px 10px rgba(0, 0, 0, .25),
-                0 12px 24px rgba(0, 0, 0, .25);
-  }
-
-  @media (orientation: portrait) {
-    box-shadow: 0 0 0 100vh rgba(0, 0, 0, .3),
-                0 10px 10px rgba(0, 0, 0, .25),
-                0 12px 24px rgba(0, 0, 0, .25);
+  .link & {
+    h2 {
+      &::after {
+        content: 'Select a flair if it fits your post.';
+        display: block;
+        font-size: .8em; /* 16/20 */
+        font-weight: 400;
+        margin-top: .9375em; /* 15/16 */
+        text-transform: none;
+      }
+    }
   }
 
   .side .tagline & {
@@ -142,6 +147,18 @@
     .customizer {
       display: none;
     }
+  }
+
+  @media (orientation: landscape) {
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, .4),
+                0 10px 10px rgba(0, 0, 0, .25),
+                0 12px 24px rgba(0, 0, 0, .25);
+  }
+
+  @media (orientation: portrait) {
+    box-shadow: 0 0 0 100vh rgba(0, 0, 0, .3),
+                0 10px 10px rgba(0, 0, 0, .25),
+                0 12px 24px rgba(0, 0, 0, .25);
   }
 }
 
