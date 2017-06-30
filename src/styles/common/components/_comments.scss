@@ -1,0 +1,162 @@
+.commentarea {
+  border-top: 2px dotted $theme-color-commentarea-border;
+  padding-top: .9375em; /* 15/16 */
+
+  .panestack-title {
+    display: none;
+  }
+
+  .menuarea {
+    color: $theme-color-commentarea-menuarea-text;
+    font-size: .75em; /* 12/16 */
+    margin: 0 1.25em 1.25em 4.5833em; /* 15/12, 15/12, 55/12 */
+
+    .spacer {
+      margin: 0;
+
+      & + .spacer {
+        margin-left: 1.25em; /* 15/12 */
+      }
+    }
+
+    /* needs more specificity */
+    .toggle.toggle {
+      margin-left: .8333em; /* 10/12 */
+
+      a {
+        color: inherit;
+        font-size: inherit;
+        font-weight: 400;
+
+        &:hover {
+          color: $theme-color-commentarea-menuarea-text-hover;
+          text-decoration: underline;
+        }
+      }
+
+      .error {
+        font-size: inherit;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .help-hoverable {
+      font-size: inherit;
+    }
+  }
+
+  & > .usertext {
+    font-size: inherit;
+    margin: 0 .9375em .9375em 3.4375em; /* 15/16, 15/16, 55/16 */
+    overflow: visible;
+  }
+
+  & > .comment-visits-box {
+    background-color: $theme-color-infobar-background;
+    border: 1px solid $theme-color-infobar-border;
+    border-radius: 3px;
+    font-size: .75em; /* 12/16 */
+    margin: 0 1.25em 1.25em 4.5833em; /* 15/12, 15/12, 55/12 */
+    max-width: 66.6667em; /* 800/12 */
+    padding: .8333em 1.25em; /* 10/12, 15/12 */
+    width: 100%;
+
+    .title {
+      font-size: inherit;
+      font-weight: 400;
+    }
+  }
+}
+
+/* needs more specificity */
+.comment.comment {
+  .expand {
+    margin-right: .4167em; /* 5/12 */
+    padding: 0;
+  }
+
+  /* needs more specificity */
+  .author.author {
+    color: $theme-color-primary;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .score {
+    margin-left: .4167em; /* 5/12 */
+    margin-right: .4167em; /* 5/12 */
+  }
+
+  .edited-timestamp {
+    font-size: 0;
+
+    &::before {
+      content: " (" attr(title) ")";
+      font-size: 12px;
+    }
+  }
+
+  .child {
+    border-left: 2px dotted $theme-color-comment-child-border;
+    margin-left: .625em; /* 10/16 */
+    margin-top: .9375em; /* 15/16 */
+    width: 100%;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .deepthread,
+  .morecomments {
+    display: block;
+    font-size: .875em; /* 14/16 */
+    padding-left: .9286em; /* 13/14 */
+
+    &::after {
+      display: none;
+    }
+
+    a {
+      font-size: inherit;
+    }
+
+    & > a {
+      color: $theme-color-primary;
+      font-size: inherit !important;
+      font-weight: 700;
+      margin: 0;
+
+      .gray {
+        color: $theme-color-comment-collapsed;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &.new-comment {
+    background-color: $theme-color-comment-new-background;
+
+    .usertext-body {
+      background-color: transparent;
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .child & {
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 0;
+
+    & ~ .comment {
+      margin-top: .9375em; /* 15/16 */
+    }
+  }
+}

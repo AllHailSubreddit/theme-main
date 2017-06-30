@@ -1,0 +1,167 @@
+/* needs more specificity */
+.thing.thing {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: .9375em; /* 15/16 */
+
+  & > .entry {
+    flex: 1;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .midcol {
+    margin-left: 0;
+    margin-right: .9375em; /* 15/16 */
+  }
+
+  .approval-checkmark {
+    display: none;
+  }
+
+  .tagline,
+  .flat-list {
+    color: $theme-color-linklisting-meta-text;
+    font-size: .75em; /* 12/16 */
+    padding: 0;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .tagline {
+    & > * {
+      vertical-align: baseline;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .stickied-tagline {
+    color: inherit;
+  }
+
+  /* needs more specificity */
+  .author.author {
+    color: $theme-color-primary;
+    display: inline-block;
+    font-weight: 400;
+    margin: 0;
+    position: relative;
+
+    &.submitter {
+      color: $theme-color-author-submitter-text;
+    }
+
+    &.moderator {
+      font-weight: 700;
+    }
+  }
+
+  .userattrs {
+    display: none;
+  }
+
+  .usertext {
+    font-size: inherit;
+    padding: 0;
+  }
+
+  .usertext-body {
+    background-color: transparent;
+    font-size: inherit;
+    padding: 0;
+
+    .md {
+      background-color: transparent;
+      border: 0;
+      border-radius: 0;
+      margin: 0;
+      margin-bottom: .5357em; /* 7.5/14 */
+      margin-top: .5357em; /* 7.5/14 */
+      max-width: 57.1429em; /* 800/14 */
+      padding: 0;
+    }
+  }
+
+  .flat-list {
+    a {
+      color: inherit;
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+
+      &:hover {
+        color: $theme-color-linklisting-meta-link-hover;
+      }
+    }
+
+    li {
+      line-height: inherit;
+      padding: 0;
+
+      &:empty {
+        display: none;
+      }
+
+      & + li {
+        margin-left: .8333em; /* 10/12 */
+      }
+    }
+
+    .flairselectbtn {
+      color: $theme-color-primary;
+      font-weight: 700;
+
+      &::before {
+        content: 'add ';
+      }
+    }
+
+    .rescrape-button {
+      display: none;
+    }
+  }
+
+  .stamp {
+    border: 0;
+    border-radius: 1.3333em; /* 16/12 */
+    font-size: inherit;
+    line-height: inherit;
+    padding-left: .4167em; /* 5/12 */
+    padding-right: .4167em; /* 5/12 */
+  }
+
+  .nsfw-stamp {
+    background-color: $theme-color-thing-stamp-nsfw-background;
+    color: $theme-color-thing-stamp-text;
+  }
+
+  .spoiler-stamp {
+    background-color: $theme-color-thing-stamp-spoiler-background;
+    color: $theme-color-thing-stamp-text;
+  }
+
+  &.stickied {
+    background-color: $theme-color-thing-sticky-background;
+    border-left: 5px solid $theme-color-thing-sticky-border !important;
+    padding-left: .625em; /* 10/16 */
+  }
+
+  &.reddit-link {
+    padding-left: 0;
+    padding-right: 0;
+
+    .score {
+      margin-left: 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.midcol {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: inherit !important;
+  font-weight: normal;
+  height: auto;
+  margin: 0;
+  margin-left: 0;
+  margin-right: .9375em !important; /* 15/16 */
+  overflow: visible;
+  position: relative;
+  top: .125em; /* 2/16 */
+  width: 2.5ch !important;
+
+  .arrow {
+    height: 20px;
+    margin: 0;
+    transition: transform 250ms ease-out;
+    width: 20px;
+
+    &:first-child {
+      margin-bottom: .125em; /* 2/16 */
+    }
+
+    &:last-child {
+      margin-top: .125em; /* 2/16 */
+    }
+
+    & + .arrow {
+      margin-top: .625em; /* 10/16 */
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.25);
+      transition: transform 250ms ease-out;
+    }
+
+    &.archived.archived {
+      opacity: .25;
+      pointer-events: none;
+
+      & ~ .score {
+        opacity: .75;
+      }
+    }
+  }
+
+  .up,
+  .upmod {
+    transform-origin: bottom;
+  }
+
+  .up {
+    @include sprite(upvote-unselected);
+  }
+
+  .upmod {
+    @include sprite(upvote-selected);
+  }
+
+  .down,
+  .downmod {
+    transform-origin: top;
+    visibility: hidden;
+
+    .subscriber & {
+      visibility: visible;
+    }
+  }
+
+  .down {
+    @include sprite(downvote-unselected);
+  }
+
+  .downmod {
+    @include sprite(downvote-selected);
+  }
+
+  .score {
+    font-size: .875em; /* 14/16 */
+    font-weight: 700;
+    line-height: 1;
+
+    &.likes {
+      color: $theme-color-voting-likes;
+    }
+
+    &.unvoted {
+      color: $theme-color-voting-unvoted;
+    }
+
+    &.dislikes {
+      color: $theme-color-voting-dislikes;
+    }
+  }
+
+  .link & {
+    font-weight: normal;
+  }
+}
+
+@keyframes vote-up {
+
+}

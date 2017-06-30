@@ -1,0 +1,371 @@
+a[href^="#i/"],
+.flair {
+  position: relative;
+
+  &::before {
+    background-color: transparent;
+    background-image: url(%%sprite-icons%%);
+    background-size: 41.25em 90.3333em; /* 495/12, 1084/12 */
+    border: 0;
+    content: '';
+    display: block;
+    height: 2.5em; /* 30/12 */
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 2.5em; /* 30/12 */
+  }
+}
+
+a[href^="#i/"] {
+  color: inherit;
+  cursor: text;
+  display: inline-block;
+  min-width: 2.1429em; /* 30/14 */
+  pointer-events: none;
+
+  &::before {
+    font-size: .7143em; /* 10/14 */
+    top: -1.7em; /* -17/10 */
+  }
+
+  &,
+  &:first-child,
+  &:last-child {
+    margin-bottom: .0833em; /* 1/12 */
+    margin-top: 1.1667em; /* 14/12 */
+  }
+
+  &[href^="#i/large/"],
+  .comment .md > p:only-child &:only-child {
+    margin-bottom: 0;
+    margin-top: 0;
+    min-width: 3.2143em; /* 45/14 */
+    height: 3.2143em; /* 45/14 */
+
+    &::before {
+      font-size: 1.2857em; /* 18/14 */
+      top: .2778em; /* 5/18 */
+    }
+  }
+}
+
+.flair {
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 1.3334em; /* 16/12 */
+  color: $theme-color-primary;
+  line-height: 1.125; /* 13.5/12 */
+  margin-right: .8333em; /* 10/12 */
+  padding-left: .6667em; /* 8/12 */
+  padding-right: .6667em; /* 8/12 */
+  white-space: nowrap;
+
+  &::before {
+    left: -2.9167em; /* -35/12 */
+    top: -.5833em; /* -7/12 */
+  }
+
+  &[class*="flair-"] {
+    margin-left: 2.9167em; /* 35/12 */
+  }
+
+  &:empty {
+    border: 0;
+    margin-right: 0;
+    padding: 0;
+
+    &::before {
+      top: -1.6667em; /* -20/12 */
+    }
+  }
+
+  .collapsed & {
+    color: $theme-color-comment-collapsed;
+    display: inline-block;
+
+    &::before {
+      opacity: .5;
+    }
+  }
+}
+
+@function sprite-icon-background-position($_row, $_column) {
+  $_row: $_row - 1;
+  $_column: $_column - 1;
+  $_x: ($_column * -2.5em) + ($_column * -.0833em); /* -30/12, -1/12 */
+  $_y: ($_row * -2.5em) + ($_row * -.0833em); /* -30/12, -1/12 */
+
+  @return $_x $_y;
+}
+
+$sprite-icons: (
+  // row 1
+  (
+    ("blank"),
+    ("l1c4"),
+    ("english-l"),
+    ("mascot"),
+    ("football", "football-mascot", "mascot-football"),
+    ("football-alt", "football-mascot-alt", "mascot-football-alt"),
+    ("basketball", "basketball-mascot", "mascot-basketball"),
+    ("helmet", "football-helmet"),
+    ("winged-full", "winged-louisville"),
+    ("winged-short", "winged-the-ville"),
+    ("ville", "the-ville"),
+    ("2013-national-champions"),
+    ("l", "l-up", "english-l-hand")
+  ),
+  // row 2
+  (
+    ("ncaa"),
+    ("accn", "acc-network"),
+    ("accne", "acc-network-extra"),
+    ("btn", "big-ten-network"),
+    ("cbssn", "cbs-sports"),
+    ("espn"),
+    ("espn2"),
+    ("espn3"),
+    ("espnu"),
+    ("watch-espn"),
+    ("fox"),
+    ("fox-sports", "rsn"),
+    ("fs1"),
+    ("longhorn-network"),
+    ("nbc"),
+    ("nbc-sports")
+  ),
+  // row 3
+  (
+    ("pac12-network"),
+    ("secn", "sec-network"),
+    ("tbs"),
+    ("tnt"),
+    ("trutv", "tru-tv")
+  ),
+  // row 4
+  (
+    ("aec", "american-east", "american-east-conference"),
+    ("albany", "university-at-albany"),
+    ("binghamton", "binghamton-university"),
+    ("hartford", "university-of-hartford"),
+    ("maine", "university-of-maine"),
+    ("umbc", "university-of-maryland-baltimore-county"),
+    ("new-hampshire", "university-of-new-hampshire"),
+    ("stony-brook", "stony-brook-university"),
+    ("vermont", "university-of-vermont")
+  ),
+  // row 4
+  (
+    ("aac", "american-athletic", "american-athletic-conference"),
+    ("central-florida", "university-of-central-florida"),
+    ("cincinnati", "university-of-cincinnati"),
+    ("uconn", "connecticut", "university-of-connecticut"),
+    ("east-carolina", "east-carolina-university"),
+    ("houston", "university-of-houston"),
+    ("memphis", "university-of-memphis"),
+    ("south-florida", "university-of-south-florida"),
+    ("smu", "southern-methodist-university"),
+    ("temple", "temple-university"),
+    ("tulane", "tulane-university"),
+    ("tulsa", "university-of-tulsa")
+  ),
+  // row 5
+  (
+    ("a10", "atlantic-10", "atlantic-10-conference"),
+    ("davidson", "davidson-college"),
+    ("dayton", "university-of-dayton"),
+    ("duquesne", "duquesne-university"),
+    ("fordham", "fordham-university"),
+    ("mason", "george-mason", "george-mason-university"),
+    ("gwu", "george-washington", "george-washington-university"),
+    ("la-salle", "la-salle-university"),
+    ("umass", "university-of-massachusetts-amherst"),
+    ("rhode-island", "university-of-rhode-island"),
+    ("richmond", "university-of-richmond"),
+    ("st-bonaventure", "st-bonaventure-university"),
+    ("sju", "st-joes", "saint-josephs", "saint-josephs-university"),
+    ("vcu", "virginia-commonwealth", "virginia-commonwealth-university")
+  ),
+  // row 6
+  (
+    ("acc", "atlantic-coast", "atlantic-coast-conference"),
+    ("bc", "boston-college"),
+    ("clemson", "clemson-university"),
+    ("duke", "duke-university"),
+    ("fsu", "florida-state", "florida-state-university"),
+    ("gt", "georgia-tech", "georgia-institute-of-technology"),
+    ("u-of-l", "louisville", "university-of-louisville"),
+    ("the-u", "miami", "university-of-miami"),
+    ("unc", "north-carolina", "university-of-north-carolina", "university-of-north-carolina-at-chapel-hill"),
+    ("ncsu", "nc-state", "north-carolina-state", "north-carolina-state-university"),
+    ("notre-dame", "university-of-notre-dame"),
+    ("pitt", "pittsburgh", "university-of-pittsburgh"),
+    ("syracuse", "syracuse-university"),
+    ("uva", "virginia", "university-of-virginia"),
+    ("virginia-tech"),
+    ("wake-forest", "wake-forest-university")
+  ),
+  // row 7
+  (
+    ("asc", "atlantic-sun", "atlantic-sun-conference"),
+    ("florida-gulf-coast", "florida-gulf-coast-university"),
+    ("jacksonville", "jacksonville-university"),
+    ("kennesaw", "kennesaw-state", "kennesaw-state-university"),
+    ("lipscomb", "lipscomb-university"),
+    ("njit", "new-jersey", "new-jersey-institute-of-technology"),
+    ("north-florida", "university-of-north-florida"),
+    ("usc-upstate", "south-carolina-upstate", "university-of-south-carolina-upstate"),
+    ("stetson", "stetson-university")
+  ),
+  // row 8
+  (
+    ("b12", "big-12", "big-12-conference"),
+    ("baylor", "baylor-university"),
+    ("iowa", "iowa-state", "iowa-state-university"),
+    ("ku", "kansas", "university-of-kansas"),
+    ("k-state", "kansas-state", "kansas-state-university"),
+    ("oklahoma", "university-of-oklahoma"),
+    ("osu", "oklahoma-state", "oklahoma-state-university"),
+    ("ut", "university-of-texas", "university-of-texas-at-austin"),
+    ("tcu", "texas-christian", "texas-christian-university"),
+    ("texas-tech", "texas-tech-university"),
+    ("wvu", "west-virginia", "west-virginia-university")
+  ),
+  // row 9
+  (
+    ("big-east", "big-east-conference"),
+    ("butler", "butler-university"),
+    ("creighton", "creighton-university"),
+    ("depaul", "depaul-university"),
+    ("georgetown", "georgetown-university"),
+    ("marquette", "marquette-university"),
+    ("providence", "providence-college"),
+    ("st-johns", "st-johns-university"),
+    ("seton-hall", "seton-hall-university"),
+    ("villanova", "villanova-university"),
+    ("xavier", "xavier-university")
+  ),
+  // row 10
+  (
+    ("big-sky", "big-sky-conference")
+  ),
+  // row 11
+  (
+    ("big-south", "big-south-conference")
+  ),
+  // row 12
+  (
+    ("b10", "b1g", "B1G", "big-10", "big-ten", "big-10-conference", "big-ten-conference")
+  ),
+  // row 13
+  (
+    ("big-west", "big-west-conference")
+  ),
+  // row 14
+  (
+    ("caa", "colonial-athletic", "colonial-athletic-association")
+  ),
+  // row 15
+  (
+    ("cusa", "c-usa", "conference-usa")
+  ),
+  // row 16
+  (
+    ("horizon", "horizon-league")
+  ),
+  // row 17
+  (
+    ("ivy", "ivy-league")
+  ),
+  // row 18
+  (
+    ("maac", "metro-atlantic", "metro-atlantic-athletic-conference")
+  ),
+  // row 19
+  (
+    ("mac", "mid-american", "mid-american-conference")
+  ),
+  // row 20
+  (
+    ("meac", "mid-eastern", "mid-eastern-athletic-conference")
+  ),
+  // row 21
+  (
+    ("mvc", "the-valley", "missouri-valley", "missouri-valley-conference")
+  ),
+  // row 22
+  (
+    ("mw", "mountain-west", "mountain-west-conference")
+  ),
+  // row 23
+  (
+    ("nec", "northeast", "northeast-conference")
+  ),
+  // row 24
+  (
+    ("ovc", "ohio-valley", "ohio-valley-conference")
+  ),
+  // row 25
+  (
+    ("p12", "pac-12", "pac-12-conference")
+  ),
+  // row 26
+  (
+    ("patriot-league")
+  ),
+  // row 27
+  (
+    ("sec", "southeastern", "southeastern-conference")
+  ),
+  // row 28
+  (
+    ("socon", "southern", "southern-conference")
+  ),
+  // row 29
+  (
+    ("southland", "southland-conference")
+  ),
+  // row 30
+  (
+    ("swac", "southwestern", "southwestern-athletic-conference")
+  ),
+  // row 31
+  (
+    ("sun-belt", "sun-belt-conference")
+  ),
+  // row 32
+  (
+    ("summit", "the-summit", "the-summit-league")
+  ),
+  // row 33
+  (
+    ("wcc", "west-coast", "west-coast-conference")
+  ),
+  // row 34
+  (
+    ("wac", "western", "western-athletic-conference")
+  ),
+);
+
+/**
+ * Output CSS for each sprite icon
+ */
+@for $_row-num from 1 through length($sprite-icons) {
+ $_row: nth($sprite-icons, $_row-num);
+
+ @for $_col-num from 1 through length($_row) {
+   $_col: nth($_row, $_col-num);
+   $_last: nth($_col, length($_col));
+   $_selectors: ();
+
+   @each $_class in $_col {
+     $_selectors: append($_selectors, "a[href^=\"#i/\"][href$=\"/#{$_class}\"]::before", comma);
+     $_selectors: append($_selectors, ".flair-#{$_last}::before", comma);
+   }
+
+   #{$_selectors} {
+     background-position: sprite-icon-background-position($_row-num, $_col-num);
+   }
+ }
+}

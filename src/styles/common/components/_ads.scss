@@ -1,0 +1,42 @@
+.organic-listing {
+  margin: 0;
+
+  & > .link {
+    align-items: center;
+    display: flex;
+
+    .thumbnail {
+      font-size: inherit;
+      margin: 0;
+      margin-left: .9375em; /* 15/16 */
+      margin-right: .9375em; /* 15/16 */
+    }
+
+    & > .entry {
+      flex: 1;
+    }
+
+    &.promoted {
+      padding: .9375em; /* 15/16 */
+
+      .sponsored-indicator {
+        margin-right: .9375em; /* 15/16 */
+        margin-top: 0;
+      }
+
+      .tagline,
+      .flat-list {
+        color: $theme-color-linklisting-meta-text;
+        font-size: .75em; /* 12/16 */
+        padding: 0;
+
+        a {
+          color: inherit;
+          font-weight: 400;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

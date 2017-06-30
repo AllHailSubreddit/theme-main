@@ -1,0 +1,731 @@
+.side {
+  background-color: transparent;
+  background-image: url(%%sidebar-background%%), url(%%sidebar-custom%%);
+  background-position: .9375em .9375em, .9375em 17.4688em; /* 15/16, 15/16, 15/16, 279.5/16 */
+  background-repeat: no-repeat, no-repeat;
+  background-size: 4.6875em, 18.75em; /* 75/16, 300/16 */
+  font-size: 1em;
+  margin: 0;
+  padding: 37.1563em .9375em 1.875em; /* 594.5/16, 15/16, 30/16 */
+  width: 20.625em; /* 330/16 */
+
+  .spacer {
+    margin: 0;
+  }
+
+  .sidebox,
+  .sidecontentbox {
+    margin-bottom: .9375em; /* 15/16 */
+    margin-top: .9375em; /* 15/16 */
+
+    .title {
+      h1 {
+        color: inherit;
+        display: block;
+        font-size: 1em;
+        margin-bottom: .9375em; /* 15/16 */
+        margin-top: 1.875em; /* 30/16 */
+      }
+
+      .collapse-button {
+        display: none;
+      }
+    }
+
+    .content {
+      border: 0;
+      font-size: .875em; /* 14/16 */
+      padding: 0;
+
+      li {
+        margin-bottom: .7143em; /* 10/14 */
+        margin-top: .7143em; /* 10/14 */
+
+        &.more {
+          text-align: left;
+
+          a {
+            color: #000;
+          }
+        }
+      }
+
+      a {
+        background-color: transparent;
+        color: $theme-color-primary;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+
+      .flair {
+        font-size: .7143em; /* 10/14 */
+      }
+    }
+  }
+
+  .create,
+  .redditname {
+    display: none;
+  }
+
+  .subscribers,
+  .users-online,
+  .subscribe-button,
+  .tagline {
+    margin: 0;
+    padding: 0 .9375em; /* 15/16 */
+    position: absolute;
+    right: 0;
+    width: 20.625em; /* 330/16 */
+  }
+
+  .subscribers,
+  .users-online {
+    padding-left: 6.5625em; /* 105/16 */
+    text-align: center;
+  }
+
+  .subscribers {
+    top: 24.0625em; /* 385/16 */
+
+    .number {
+      color: $theme-color-sidebar-subscribers-text;
+      font-size: 20px;
+      font-weight: 700;
+
+      &::after {
+        content: ' Cards Fans';
+      }
+    }
+
+    .word {
+      display: none;
+    }
+  }
+
+  .users-online {
+    /* 25px lower than .subscribers */
+    top: 25.625em; /* 410/16 */
+
+    &::before {
+      content: none;
+    }
+
+    .number {
+      cursor: initial;
+
+      &::after {
+        cursor: inherit;
+        content: ' Viewing';
+      }
+    }
+
+    .word {
+      display: none;
+    }
+  }
+
+  .subscribe-button {
+    text-align: center;
+    /* 50px lower than .users-online */
+    top: 28.75em; /* 460/16 */
+
+    .option {
+      background-image: none;
+      background-color: $theme-color-sidebar-subscribe-background;
+      border-radius: 3px;
+      border: 0;
+      color: $theme-color-sidebar-subscribe-text;
+      display: none;
+      font-size: 1em;
+      font-weight: 400;
+      height: 2.25em;
+      line-height: 2.25em;
+      padding: 0;
+      text-transform: capitalize;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  .submit {
+    margin-bottom: 0;
+    margin-top: 0;
+    position: absolute;
+    /* 51px lower than .subscribe-button */
+    top: 31.9375em; /* 511/16 */
+    width: 8.9063em; /* 142.5/16 */
+
+    a {
+      background-color: $theme-color-sidebar-submit-background;
+      border-radius: 3px;
+      color: $theme-color-sidebar-submit-text;
+      display: block;
+      font-size: 1em;
+      height: 2.25em;
+      line-height: 2.25em;
+    }
+
+    .morelink {
+      background: transparent;
+      border: 0;
+      font-size: 1em;
+      font-weight: 400;
+      height: auto;
+      letter-spacing: 0;
+      line-height: inherit;
+      position: static;
+    }
+
+    .nub {
+      display: none;
+    }
+
+    &-link {
+      right: 10.7813em; /* 172.5/16 */
+    }
+
+    &-text {
+      right: .9375em; /* 15/16 */
+    }
+  }
+
+  .flairtoggle {
+    display: none;
+  }
+
+  .tagline {
+    color: transparent;
+    font-size: 1em;
+    text-align: center;
+    top: 562px;
+
+    .flair {
+      border: 0;
+      border-radius: 0;
+      font-size: .75em; /* 12/16 */
+      height: 2.5em; /* 30/12 */
+      line-height: inherit;
+      margin-left: 0;
+      margin-right: 0;
+      overflow: hidden;
+      padding: 0;
+      text-indent: 100%;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: 2.5em; /* 30/12 */
+
+      &::before {
+        position: static;
+      }
+    }
+
+    .author {
+      display: none;
+    }
+
+    .userattrs {
+      display: none;
+    }
+
+    .flairselectbtn {
+      &::after {
+        content: ' flair';
+      }
+    }
+
+    a {
+      color: $theme-color-sidebar-editflair-text;
+    }
+  }
+
+  .helplink.helplink {
+    background-color: transparent;
+    border-radius: 3px;
+    color: $theme-color-sidebar-helplink-text;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0;
+    position: absolute;
+    right: 10.3125em; /* 165/16 */
+    text-align: center;
+    /* 51px lower than .submit */
+    top: 37.3125em; /* 597/16 */
+    transform: translateX(50%);
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  .leavemoderator,
+  .leavecontributor-button {
+    display: none;
+  }
+
+  .titlebox,
+  .usertext {
+    font-size: inherit;
+  }
+
+  .usertext {
+    margin-top: .9375em; /* 15/16 */
+  }
+
+  .md {
+    font-size: .875em; /* 14/16 */
+
+    a[href="#calendar/empty"],
+    table {
+      background-color: $theme-color-sidebar-schedule-background;
+      color: $theme-color-sidebar-schedule-text;
+      display: flex;
+      font-size: 16px;
+      left: 0;
+      line-height: 1.365;
+      margin: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 5em; /* 80/16 */
+      cursor: default;
+      width: 100%;
+    }
+
+    a[href="#calendar/empty"] {
+      align-items: center;
+      height: 4.625em; /* 74/16 */
+      justify-content: center;
+      pointer-events: none;
+
+      &::before {
+        content: 'There are no games to display.';
+        font-weight: 700;
+      }
+    }
+
+
+    table {
+      /* calendar */
+      &:last-child {
+        tbody,
+        tr,
+        th,
+        td {
+          line-height: inherit;
+        }
+
+        thead {
+          display: none;
+        }
+
+        tbody,
+        tr {
+          height: 100%;
+        }
+
+        tbody,
+        td {
+          display: block;
+        }
+
+        tbody {
+          display: flex;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+        }
+
+        tr {
+          align-content: flex-start;
+          align-items: center;
+          background: $theme-color-sidebar-schedule-event-background;
+          border-left: 1px solid $theme-color-sidebar-schedule-event-border;
+          border-right: 1px solid $theme-color-sidebar-schedule-event-border;
+          display: flex;
+          flex: 0 0 auto;
+          flex-wrap: wrap;
+          font-size: 11px;
+          text-transform: uppercase;
+          width: 15.9091em; /* 175/11 */
+
+          &:first-child {
+            border-left: 0;
+          }
+
+          &:last-child {
+            border-right: 0;
+          }
+
+          & + tr {
+            margin-left: -1px;
+          }
+        }
+
+        td {
+          background-color: transparent;
+          border: 0;
+          color: inherit;
+          margin: 0;
+          padding: 0;
+
+          &:first-child {
+            color: $theme-color-sidebar-schedule-event-sport;
+            flex: 1 0 100%;
+            font-weight: 700;
+            padding-bottom: .2727em; /* 3/11 */
+            padding-left: .9091em; /* 10/11 */
+            padding-right: .9091em; /* 10/11 */
+            padding-top: .4545em; /* 5/11 */
+          }
+
+          &:nth-child(2),
+          &:nth-child(4) {
+            flex: 1 0 auto;
+            overflow: hidden;
+            padding-left: .9091em; /* 10/11 */
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 70%;
+
+            & + td {
+              float: right;
+              flex: 0 0 auto;
+              padding-right: .9091em; /* 10/11 */
+              text-align: right;
+              width: 3.1818em; /* 35/11 */
+            }
+
+            a {
+              color: inherit;
+              pointer-events: none;
+
+              &[href="#calendar/winner"] {
+                font-weight: 700;
+                position: relative;
+
+                &::before {
+                  border-bottom: 5px solid transparent;
+                  border-left: 7px solid;
+                  border-top: 5px solid transparent;
+                  color: $theme-color-sidebar-schedule-event-win-indicator;
+                  content: '';
+                  display: inline-block;
+                  left: -.9091em; /* -10/11 */
+                  position: absolute;
+                  top: .1818em; /* 2/11 */
+                }
+              }
+            }
+          }
+
+          &:nth-child(6),
+          &:nth-child(7) {
+            color: $theme-color-sidebar-schedule-event-text-supplementary;
+            font-size: 10px;
+            flex: 1 0 auto;
+            line-height: 1.5;
+            padding-bottom: .3em; /* 3/10 */
+            padding-top: .3em; /* 3/10 */
+          }
+
+          &:nth-child(6) {
+            padding-left: 1em; /* 10/10 */
+          }
+
+          &:nth-child(7) {
+            padding-right: 1em; /* 10/10 */
+            text-align: right;
+
+            a[href^="#i/"] {
+              font-size: 12px;
+              margin-bottom: -.3571em; /* -5/14 */
+              margin-top: -.3571em; /* -5/14 */
+              min-width: 0;
+              top: -.1429em; /* -2/14 */
+              vertical-align: middle;
+
+              &::before {
+                cursor: default;
+                pointer-events: auto;
+                position: static;
+              }
+
+              &:hover {
+                &::after {
+                  background-color: $theme-color-sidebar-schedule-event-icon-tooltip-background;
+                  border-radius: 3px;
+                  bottom: 100%;
+                  color: $theme-color-sidebar-schedule-event-icon-tooltip-text;
+                  display: block;
+                  font-size: 10px;
+                  padding: .2em .5em; /* 2/10, 5/10 */
+                  position: absolute;
+                  right: 0;
+                  white-space: nowrap;
+                }
+              }
+
+              &[href="#i/abc"] {
+                &:hover {
+                  &::after {
+                    content: 'ABC';
+                  }
+                }
+              }
+
+              &[href="#i/acc-network"] {
+                &:hover {
+                  &::after {
+                    content: 'ACC Network';
+                  }
+                }
+              }
+
+              &[href="#i/acc-network-extra"] {
+                &:hover {
+                  &::after {
+                    content: 'ACC Network Extra'
+                  }
+                }
+              }
+
+              &[href="#i/big-ten-network"] {
+                &:hover {
+                  &::after {
+                    content: 'Big Ten Network';
+                  }
+                }
+              }
+
+              &[href="#i/cbs"] {
+                &:hover {
+                  &::after {
+                    content: 'CBS';
+                  }
+                }
+              }
+
+              &[href="#i/cbs-sports"] {
+                &:hover {
+                  &::after {
+                    content: 'CBS Sports';
+                  }
+                }
+              }
+
+              &[href="#i/espn"] {
+                &:hover {
+                  &::after {
+                    content: 'ESPN';
+                  }
+                }
+              }
+
+              &[href="#i/espn2"] {
+                &:hover {
+                  &::after {
+                    content: 'ESPN2';
+                  }
+                }
+              }
+
+              &[href="#i/espn3"] {
+                &:hover {
+                  &::after {
+                    content: 'ESPN3';
+                  }
+                }
+              }
+
+              &[href="#i/espnu"] {
+                &:hover {
+                  &::after {
+                    content: 'ESPNU';
+                  }
+                }
+              }
+
+              &[href="#i/watch-espn"] {
+                &:hover {
+                  &::after {
+                    content: 'WatchESPN';
+                  }
+                }
+              }
+
+              &[href="#i/fox"] {
+                &:hover {
+                  &::after {
+                    content: 'Fox';
+                  }
+                }
+              }
+
+              &[href="#i/fox-sports"] {
+                &:hover {
+                  &::after {
+                    content: 'Fox Sports';
+                  }
+                }
+              }
+
+              &[href="#i/fs1"] {
+                &:hover {
+                  &::after {
+                    content: 'FS1';
+                  }
+                }
+              }
+
+              &[href="#i/longhorn-network"] {
+                &:hover {
+                  &::after {
+                    content: 'Longhorn Network';
+                  }
+                }
+              }
+
+              &[href="#i/nbc"] {
+                &:hover {
+                  &::after {
+                    content: 'NBC';
+                  }
+                }
+              }
+
+              &[href="#i/nbc-sports"] {
+                &:hover {
+                  &::after {
+                    content: 'NBC Sports';
+                  }
+                }
+              }
+
+              &[href="#i/pac12-network"] {
+                &:hover {
+                  &::after {
+                    content: 'PAC12 Network';
+                  }
+                }
+              }
+
+              &[href="#i/rsn"] {
+                &:hover {
+                  &::after {
+                    content: 'Regional Sports Network';
+                  }
+                }
+              }
+
+              &[href="#i/sec-network"] {
+                &:hover {
+                  &::after {
+                    content: 'SEC Network';
+                  }
+                }
+              }
+
+              &[href="#i/tbs"] {
+                &:hover {
+                  &::after {
+                    content: 'TBS';
+                  }
+                }
+              }
+
+              &[href="#i/tnt"] {
+                &:hover {
+                  &::after {
+                    content: 'TNT';
+                  }
+                }
+              }
+
+              &[href="#i/tru-tv"] {
+                &:hover {
+                  &::after {
+                    content: 'TruTV';
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          tr {
+            background-color: $theme-color-sidebar-schedule-event-background-inactive;
+
+            &:hover {
+              background-color: $theme-color-sidebar-schedule-event-background;
+              box-shadow: 0 0 5px 0 $theme-color-sidebar-schedule-box-shadow;
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    font-size: .75em; /* 12/16 */
+    margin-bottom: 2.5em; /* 30/12 */
+    margin-top: 1.25em; /* 15/12 */
+    padding-top: 1.25em; /* 15/12 */
+
+    a {
+      color: $theme-color-primary;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    .flair {
+      display: none;
+    }
+  }
+
+  .account-activity-box {
+    a {
+      color: #000;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .linkinfo {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    font-size: .875em; /* 14/16 */
+    margin-bottom: 1.0714em; /* 15/14 */
+    margin-top: 1.0714em; /* 15/14 */
+    padding: 0;
+
+    .date {
+      display: none;
+    }
+
+    .shortlink {
+      font-size: 0;
+
+      input {
+        display: block;
+        font-size: 16px;
+        padding: .3125em; /* 5/16 */
+        width: 100%;
+      }
+    }
+  }
+}
