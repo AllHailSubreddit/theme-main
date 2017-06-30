@@ -61,7 +61,7 @@
       }
 
       .flair {
-        font-size: .8571em; /* 12/14 */
+        font-size: .7143em; /* 10/14 */
       }
     }
   }
@@ -248,16 +248,16 @@
     background-color: transparent;
     border-radius: 3px;
     color: $theme-color-sidebar-helplink-text;
-    display: block;
+    display: inline-block;
     font-size: 1em;
     font-weight: 400;
     margin: 0;
     position: absolute;
-    right: .9375em; /* 15/16 */
+    right: 10.3125em; /* 165/16 */
     text-align: center;
     /* 51px lower than .submit */
     top: 37.3125em; /* 597/16 */
-    width: 18.75em; /* 300/16 */
+    transform: translateX(50%);
 
     &:hover,
     &:focus {
@@ -282,23 +282,38 @@
   .md {
     font-size: .875em; /* 14/16 */
 
+    a[href="#calendar/empty"],
+    table {
+      background-color: $theme-color-sidebar-schedule-background;
+      color: $theme-color-sidebar-schedule-text;
+      display: flex;
+      font-size: 16px;
+      left: 0;
+      line-height: 1.365;
+      margin: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 5em; /* 80/16 */
+      cursor: default;
+      width: 100%;
+    }
+
+    a[href="#calendar/empty"] {
+      align-items: center;
+      height: 4.625em; /* 74/16 */
+      justify-content: center;
+      pointer-events: none;
+
+      &::before {
+        content: 'There are no games to display.';
+        font-weight: 700;
+      }
+    }
+
+
     table {
       /* calendar */
-      &:last-of-type {
-        @include clearfix;
-        background-color: $theme-color-sidebar-schedule-background;
-        color: $theme-color-sidebar-schedule-text;
-        display: flex;
-        font-size: 16px;
-        left: 0;
-        line-height: 1.365;
-        margin: 0;
-        overflow: hidden;
-        position: absolute;
-        top: 5em; /* 80/16 */
-        cursor: default;
-        width: 100%;
-
+      &:last-child {
         tbody,
         tr,
         th,
@@ -390,7 +405,7 @@
               color: inherit;
               pointer-events: none;
 
-              &[href="#W"] {
+              &[href="#calendar/winner"] {
                 font-weight: 700;
                 position: relative;
 
@@ -428,10 +443,217 @@
             text-align: right;
 
             a[href^="#i/"] {
-              font-size: 14px;
-              margin-bottom: 0;
-              margin-top: 0;
-              min-width: 1.875em;
+              font-size: 12px;
+              margin-bottom: -.3571em; /* -5/14 */
+              margin-top: -.3571em; /* -5/14 */
+              min-width: 0;
+              top: -.1429em; /* -2/14 */
+              vertical-align: middle;
+
+              &::before {
+                cursor: default;
+                pointer-events: auto;
+                position: static;
+              }
+
+              &:hover {
+                &::after {
+                  background-color: $theme-color-sidebar-schedule-event-icon-tooltip-background;
+                  border-radius: 3px;
+                  bottom: 100%;
+                  color: $theme-color-sidebar-schedule-event-icon-tooltip-text;
+                  display: block;
+                  font-size: 10px;
+                  padding: .2em .5em; /* 2/10, 5/10 */
+                  position: absolute;
+                  right: 0;
+                  white-space: nowrap;
+                }
+              }
+
+              &[href="#i/abc"] {
+                &:hover {
+                  &::after {
+                    content: 'ABC';
+                  }
+                }
+              }
+
+              &[href="#i/acc-network"] {
+                &:hover {
+                  &::after {
+                    content: 'ACC Network';
+                  }
+                }
+              }
+
+              &[href="#i/acc-network-extra"] {
+                &:hover {
+                  &::after {
+                    content: 'ACC Network Extra'
+                  }
+                }
+              }
+
+              &[href="#i/big-ten-network"] {
+                &:hover {
+                  &::after {
+                    content: 'Big Ten Network';
+                  }
+                }
+              }
+
+              &[href="#i/cbs"] {
+                &:hover {
+                  &::after {
+                    content: 'CBS';
+                  }
+                }
+              }
+
+              &[href="#i/cbs-sports"] {
+                &:hover {
+                  &::after {
+                    content: 'CBS Sports';
+                  }
+                }
+              }
+
+              &[href="#i/espn"] {
+                &:hover {
+                  &::after {
+                    content: 'ESPN';
+                  }
+                }
+              }
+
+              &[href="#i/espn2"] {
+                &:hover {
+                  &::after {
+                    content: 'ESPN2';
+                  }
+                }
+              }
+
+              &[href="#i/espn3"] {
+                &:hover {
+                  &::after {
+                    content: 'ESPN3';
+                  }
+                }
+              }
+
+              &[href="#i/espnu"] {
+                &:hover {
+                  &::after {
+                    content: 'ESPNU';
+                  }
+                }
+              }
+
+              &[href="#i/watch-espn"] {
+                &:hover {
+                  &::after {
+                    content: 'WatchESPN';
+                  }
+                }
+              }
+
+              &[href="#i/fox"] {
+                &:hover {
+                  &::after {
+                    content: 'Fox';
+                  }
+                }
+              }
+
+              &[href="#i/fox-sports"] {
+                &:hover {
+                  &::after {
+                    content: 'Fox Sports';
+                  }
+                }
+              }
+
+              &[href="#i/fs1"] {
+                &:hover {
+                  &::after {
+                    content: 'FS1';
+                  }
+                }
+              }
+
+              &[href="#i/longhorn-network"] {
+                &:hover {
+                  &::after {
+                    content: 'Longhorn Network';
+                  }
+                }
+              }
+
+              &[href="#i/nbc"] {
+                &:hover {
+                  &::after {
+                    content: 'NBC';
+                  }
+                }
+              }
+
+              &[href="#i/nbc-sports"] {
+                &:hover {
+                  &::after {
+                    content: 'NBC Sports';
+                  }
+                }
+              }
+
+              &[href="#i/pac12-network"] {
+                &:hover {
+                  &::after {
+                    content: 'PAC12 Network';
+                  }
+                }
+              }
+
+              &[href="#i/rsn"] {
+                &:hover {
+                  &::after {
+                    content: 'Regional Sports Network';
+                  }
+                }
+              }
+
+              &[href="#i/sec-network"] {
+                &:hover {
+                  &::after {
+                    content: 'SEC Network';
+                  }
+                }
+              }
+
+              &[href="#i/tbs"] {
+                &:hover {
+                  &::after {
+                    content: 'TBS';
+                  }
+                }
+              }
+
+              &[href="#i/tnt"] {
+                &:hover {
+                  &::after {
+                    content: 'TNT';
+                  }
+                }
+              }
+
+              &[href="#i/tru-tv"] {
+                &:hover {
+                  &::after {
+                    content: 'TruTV';
+                  }
+                }
+              }
             }
           }
         }
@@ -490,5 +712,20 @@
     margin-bottom: 1.0714em; /* 15/14 */
     margin-top: 1.0714em; /* 15/14 */
     padding: 0;
+
+    .date {
+      display: none;
+    }
+
+    .shortlink {
+      font-size: 0;
+
+      input {
+        display: block;
+        font-size: 16px;
+        padding: .3125em; /* 5/16 */
+        width: 100%;
+      }
+    }
   }
 }

@@ -62,13 +62,11 @@
 
   .down,
   .downmod {
-    opacity: .25;
-    pointer-events: none;
     transform-origin: top;
+    visibility: hidden;
 
     .subscriber & {
-      pointer-events: initial;
-      opacity: 1;
+      visibility: visible;
     }
   }
 

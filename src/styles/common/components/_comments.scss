@@ -114,10 +114,28 @@
 
   .deepthread,
   .morecomments {
-    font-size: inherit;
+    display: block;
+    font-size: .875em; /* 14/16 */
+    padding-left: .9286em; /* 13/14 */
+
+    &::after {
+      display: none;
+    }
 
     a {
       font-size: inherit;
+    }
+
+    & > a {
+      color: $theme-color-primary;
+      font-size: inherit !important;
+      font-weight: 700;
+      margin: 0;
+
+      .gray {
+        color: $theme-color-comment-collapsed;
+        font-weight: 400;
+      }
     }
   }
 

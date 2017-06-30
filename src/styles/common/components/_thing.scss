@@ -148,18 +148,8 @@
 
   &.stickied {
     background-color: $theme-color-thing-sticky-background;
-  }
-
-  &.collapsed {
-    .author.author {
-      background-color: $theme-color-comment-collapsed;
-
-      & + .userattrs {
-        a {
-          background-color: lighten($theme-color-comment-collapsed, 11%);
-        }
-      }
-    }
+    border-left: 5px solid $theme-color-thing-sticky-border !important;
+    padding-left: .625em; /* 10/16 */
   }
 
   &.reddit-link {

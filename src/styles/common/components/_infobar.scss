@@ -12,6 +12,10 @@
     border-color: $theme-color-infobar-border;
   }
 
+  .commentarea & {
+    margin-left: 4.5833em; /* 55/12 */
+  }
+
   .commentarea .menuarea & {
     margin-bottom: -1.25em; /* -15/12 */
     margin-left: 0;

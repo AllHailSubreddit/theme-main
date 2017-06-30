@@ -192,6 +192,8 @@
 
     .comments-page & {
       background-color: transparent;
+      border-left: 0 !important;
+      padding-left: .9375em; /* 15/16 */
     }
   }
 }

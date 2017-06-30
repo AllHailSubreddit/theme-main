@@ -25,6 +25,16 @@
     margin-top: 0;
   }
 
+  .help-toggle a,
+  a.reddiquette {
+    color: $theme-color-comment-usertext-edit-bottomarea-link;
+
+    &:hover {
+      color: $theme-color-comment-usertext-edit-bottomarea-link-hover;
+      text-decoration: underline;
+    }
+  }
+
   .markhelp {
     border-top: 2px dotted $theme-color-commentarea-border;
     font-size: .875em; /* 14/16 */
@@ -32,6 +42,10 @@
     margin-top: .5357em; /* 7.5/14 */
     padding: 0;
     padding-top: .5357em; /* 7.5/14 */
+
+    a {
+      color: $theme-color-comment-usertext-edit-markhelp-link;
+    }
 
     & > table {
       margin: .625em 0 !important; /* 7.5/12 */
