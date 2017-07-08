@@ -1,0 +1,34 @@
+.tabbedpane {
+  .usertable {
+    font-size: inherit;
+  }
+
+  .flairrow {
+    margin-bottom: 5px;
+
+    .header,
+    .flaircell {
+      margin: 0;
+      width: 200px;
+
+      &.tagline {
+        width: 300px;
+      }
+
+      &.narrow {
+        width: 100px;
+      }
+    }
+
+    .flaircell {
+      input[type="text"] {
+        width: 100%;
+      }
+    }
+  }
+
+  .nextprev {
+    color: $theme-color-primary;
+    font-size: inherit;
+  }
+}
