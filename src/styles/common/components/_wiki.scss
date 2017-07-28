@@ -1,0 +1,19 @@
+.wiki-page {
+  textarea,
+  input[type="text"],
+  input[type="url"] {
+    border: 1px solid $theme-color-markdown-textarea-border;
+    border-radius: 3px;
+    display: block;
+    font-family: Monaco, Consolas, 'Lucida Console', monospace;
+    font-size: inherit;
+    line-height: 1.5;
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 8.125em; /* 130/16 */
+    padding: .3125em; /* 5/16 */
+    resize: vertical;
+  }
+}
