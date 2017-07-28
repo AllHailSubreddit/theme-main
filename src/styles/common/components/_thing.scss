@@ -55,10 +55,20 @@
 
     &.submitter {
       color: $theme-color-author-submitter-text;
+
+      &::after {
+        content: ' (submitter)';
+        display: inline;
+      }
     }
 
     &.moderator {
       font-weight: 700;
+
+      &::after {
+        content: ' (speaking officially)';
+        display: inline;
+      }
     }
   }
 

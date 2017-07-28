@@ -110,6 +110,24 @@
     &:empty {
       display: none;
     }
+
+    & > .usertext {
+      & > .usertext-edit {
+        margin-bottom: .9375em; /* 15/16 */
+        margin-top: 0;
+        margin-left: 1.75em; /* 28/16 */
+
+        .md {
+          margin-top: 0 !important;
+        }
+      }
+
+      &:last-child {
+        & > .usertext-edit {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   .deepthread,
