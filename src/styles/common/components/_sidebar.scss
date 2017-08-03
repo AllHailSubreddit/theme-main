@@ -339,6 +339,18 @@
           display: flex;
           flex-wrap: nowrap;
           overflow-x: auto;
+
+          &:hover {
+            tr {
+              background-color: $theme-color-sidebar-schedule-event-background-inactive;
+
+              &:hover {
+                background-color: $theme-color-sidebar-schedule-event-background;
+                box-shadow: 0 0 5px 0 $theme-color-sidebar-schedule-box-shadow;
+                position: relative;
+              }
+            }
+          }
         }
 
         tr {
@@ -654,19 +666,6 @@
                   }
                 }
               }
-            }
-          }
-        }
-
-        &:hover {
-          tr {
-            background-color: $theme-color-sidebar-schedule-event-background-inactive;
-
-            &:only-child,
-            &:hover {
-              background-color: $theme-color-sidebar-schedule-event-background;
-              box-shadow: 0 0 5px 0 $theme-color-sidebar-schedule-box-shadow;
-              position: relative;
             }
           }
         }
