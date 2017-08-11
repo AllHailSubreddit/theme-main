@@ -73,6 +73,8 @@
 
 /* needs more specificity */
 .comment.comment {
+  padding-right: 0;
+
   .expand {
     margin-right: .4167em; /* 5/12 */
     padding: 0;
@@ -111,11 +113,16 @@
       display: none;
     }
 
+    .usertext {
+      padding-right: .9375em; /* 15/16 */
+    }
+
     & > .usertext {
       & > .usertext-edit {
         margin-bottom: .9375em; /* 15/16 */
         margin-top: 0;
         margin-left: 1.75em; /* 28/16 */
+        width: calc(100% - 1.75em) !important;
 
         .md {
           margin-top: 0 !important;
