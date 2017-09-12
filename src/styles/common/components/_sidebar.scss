@@ -1,6 +1,6 @@
 .side {
   background-color: transparent;
-  background-image: url(%%sidebar-background%%), url(%%sidebar-custom%%);
+  background-image: url(%%sidebar-background%%), $theme-sidebar-custom-url;
   background-position: .9375em .9375em, .9375em 17.4688em; /* 15/16, 15/16, 15/16, 279.5/16 */
   background-repeat: no-repeat, no-repeat;
   background-size: 4.6875em, 18.75em; /* 75/16, 300/16 */
@@ -89,7 +89,7 @@
   }
 
   .subscribers {
-    top: 24.0625em; /* 385/16 */
+    top: $theme-header-height + 11.5625em; /* 185/16 */
 
     .number {
       color: $theme-color-sidebar-subscribers-text;
@@ -108,7 +108,7 @@
 
   .users-online {
     /* 25px lower than .subscribers */
-    top: 25.625em; /* 410/16 */
+    top: $theme-header-height + 13.125em; /* 210/16 */
 
     &::before {
       content: none;
@@ -131,7 +131,7 @@
   .subscribe-button {
     text-align: center;
     /* 50px lower than .users-online */
-    top: 28.75em; /* 460/16 */
+    top: $theme-header-height + 16.25em; /* 260/16 */
 
     .option {
       background-image: none;
@@ -158,7 +158,7 @@
     margin-top: 0;
     position: absolute;
     /* 51px lower than .subscribe-button */
-    top: 31.9375em; /* 511/16 */
+    top: $theme-header-height + 19.4375em; /* 311/16 */
     width: 8.9063em; /* 142.5/16 */
 
     a {
@@ -203,7 +203,7 @@
     color: transparent;
     font-size: 1em;
     text-align: center;
-    top: 562px;
+    top: $theme-header-height + 22.625em; /* 362/16 */;
 
     .flair {
       border: 0;
@@ -256,7 +256,7 @@
     right: 10.3125em; /* 165/16 */
     text-align: center;
     /* 51px lower than .submit */
-    top: 37.3125em; /* 597/16 */
+    top: $theme-header-height + 24.8125em; /* 397/16 */
     transform: translateX(50%);
 
     &:hover,

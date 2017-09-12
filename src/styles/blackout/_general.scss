@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  background-color: $theme-color-html-background;
+  background-image: none;
+  box-sizing: border-box;
+  height: initial;
+}
+
+body {
+  background-color: $theme-color-body-background;
+  background-image: url(%%body-background%%);
+  background-repeat: repeat-y;
+  background-position: top right;
+  background-size: 330px 1px;
+  box-shadow: 0 0 25px 5px $theme-color-body-box-shadow;
+  font-size: 1em;
+  line-height: 1.25;
+  margin: 0 auto;
+  max-width: 78.125em; /* 1250/16 */
+  min-width: 62.5em; /* 1000/16 */
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.content[role="main"] {
+  margin: 0;
+  overflow: hidden;
+  width: calc(100% - 20.625em); /* 330/16 */
+
+  & > .spacer {
+    margin-bottom: 0;
+  }
+
+  & > .menuarea {
+    font-size: inherit;
+    margin: 0;
+    padding: .625em .9375em; /* 10/16, 15/16 */
+  }
+}
+
+.error {
+  color: $color-red;
+  font-size: inherit;
+}
+
+#noresults {
+  font-size: .875em; /* 14/16 */
+  margin: 1.0714em 0; /* 15/14 */
+  padding: 0 1.0714em; /* 15/14 */
+  width: 100%;
+
+  .commentarea & {
+    padding-left: 3.9286em; /* 55/14 */
+  }
+}
+
+.nav-buttons {
+  font-size: inherit;
+  margin-bottom: .9375em; /* 15/16 */
+  margin-top: .9375em; /* 15/16 */
+}
+
+.nextprev,
+.next-suggestions {
+  display: block;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  .separator {
+    display: none;
+  }
+
+  a {
+    background-color: $theme-color-nextprev-link-background;
+    border: 1px solid $theme-color-nextprev-link-border;
+    color: $theme-color-nextprev-link-text;
+    display: inline-block;
+    font-size: 16px;
+    padding: .625em .9375em; /* 10/16, 15/16 */
+
+    &:hover {
+      background-color: $theme-color-nextprev-link-background-hover;
+      border: 1px solid $theme-color-nextprev-link-border;
+    }
+  }
+}
+
+.prev-button {
+  & ~ .next-button {
+    margin-left: 15px;
+  }
+}
+
+.hover-bubble.multi-selector {
+  font-size: .75em; /* 12/16 */
+  margin-right: -9.25em; /* -111/12 */
+  margin-top: -3.1667em; /* -38/12 */
+}
+
+.pretty-form {
+  width: 100%;
+}
+
+.stylesheet-customize-container {
+  padding: 0 .9375em; /* 15/16 */
+
+  .sheets {
+    margin-right: 0;
+
+    .col > div {
+      margin: 0;
+    }
+  }
+
+  .image-upload {
+    margin-bottom: .9375em; /* 15/16 */
+  }
+
+  .image-preview-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .9375em 0; /* 15/16 */
+
+    li {
+      flex: 0 0 50%;
+      font-size: .75em; /* 12/16 */
+      padding: 0;
+    }
+  }
+}

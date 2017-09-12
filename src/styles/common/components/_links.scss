@@ -168,10 +168,10 @@
 
   &.stickied {
     a.title {
-      color: $theme-color-linklisting-title-text;
+      color: $theme-color-linklisting-title-text-stickied;
 
       &:visited {
-        color: $theme-color-linklisting-title-text;
+        color: $theme-color-linklisting-title-text-stickied;
       }
     }
 

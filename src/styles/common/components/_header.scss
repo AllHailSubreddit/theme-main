@@ -5,13 +5,13 @@
   z-index: initial;
 
   &::after {
-    background: url(%%header-custom%%) no-repeat;
+    background: $theme-header-custom-url no-repeat;
     background-size: cover;
     color: $theme-color-header-banner-text;
     content: '';
     display: block;
     font-weight: 700;
-    height: 12.5em; /* 200/16 */
+    height: $theme-header-height;
     text-align: center;
     width: 100%;
   }
@@ -165,7 +165,7 @@
     }
 
     a {
-      background-image: url(%%logo%%);
+      background-image: $theme-logo-url;
       background-position: center;
       background-repeat: no-repeat;
       background-size: 4.375em; /* 70/16 */
