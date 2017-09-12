@@ -6,6 +6,7 @@
 
   &::after {
     background: $theme-header-custom-url no-repeat;
+    background-position: center;
     background-size: cover;
     color: $theme-color-header-banner-text;
     content: '';
