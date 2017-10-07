@@ -44,3 +44,7 @@ build
 
 # Images
 src/images
+
+# IntelliJ
+
+.idea

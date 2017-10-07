@@ -52,6 +52,22 @@
     font-size: inherit;
     margin: 0 .9375em .9375em 3.4375em; /* 15/16, 15/16, 55/16 */
     overflow: visible;
+
+    .post-linkflair-ama &,
+    .post-linkflair-ama-ended & {
+      textarea {
+        background-image: $theme-comment-rules;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 24.286em .929em;
+        transition: background 250ms;
+
+        &:focus {
+          background-image: none;
+          transition: background 250ms;
+        }
+      }
+    }
   }
 
   & > .comment-visits-box {
