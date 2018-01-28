@@ -148,6 +148,8 @@ $theme-sprites: (
 );
 
 $theme-header-height: 12.5em; /* 200/16 */
+$theme-sidebar-custom-height: 18.75em; /* 300/16 */
+// $theme-sidebar-custom-height: 37.5em; /* 600/16 */
 
 @import 'common/utils/functions';
 @import 'common/utils/mixins.scss';

@@ -20,6 +20,7 @@
     max-width: none;
     overflow: visible;
     padding: 0;
+    position: relative;
     text-overflow: inherit;
   }
 
@@ -195,5 +196,30 @@
       border-left: 0 !important;
       padding-left: .9375em; /* 15/16 */
     }
+  }
+
+  &.linkflair-ama {
+    .linkflairlabel {
+      &::before {
+        animation: linkflair-ama-live 3s infinite;
+        background-color: $theme-color-primary;
+        border-radius: 50%;
+        content: '';
+        display: inline-block;
+        height: .833em;
+        margin-right: .417em;
+        width: .833em;
+      }
+    }
+  }
+}
+
+@keyframes linkflair-ama-live {
+  0% {
+    box-shadow: 0 0 0 0 $theme-color-primary;
+  }
+
+  66%, 100% {
+    box-shadow: 0 0 0 5px transparent;
   }
 }

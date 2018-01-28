@@ -6,7 +6,7 @@
   background-size: 4.6875em, 18.75em; /* 75/16, 300/16 */
   font-size: 1em;
   margin: 0;
-  padding: 37.1563em .9375em 1.875em; /* 594.5/16, 15/16, 30/16 */
+  padding: ($theme-sidebar-custom-height + 18.4063em) .9375em 1.875em; /* 294.5/16, 15/16, 30/16 */
   width: 20.625em; /* 330/16 */
 
   .spacer {
